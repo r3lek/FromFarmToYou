@@ -6,3 +6,4 @@ After that paste the download link
 Next go inside "FromFarmToYou" and copy all files
 Now go back to ChickenSite directory and paste files there and replace if asked to.
 Then delete "FromFarmToYou"
+ALSO HAVE YOUR OWN REPO!
