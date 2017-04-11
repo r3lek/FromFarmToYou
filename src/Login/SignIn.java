@@ -14,7 +14,7 @@ import javax.servlet.http.HttpSession;
 
 
 @WebServlet(urlPatterns = "/Login/Signin", loadOnStartup = 1)
-public class Signin extends HttpServlet {
+public class SignIn extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
 	public void init(ServletConfig config) throws ServletException {
