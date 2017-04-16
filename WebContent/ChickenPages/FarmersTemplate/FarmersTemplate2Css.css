@@ -23,7 +23,7 @@ nav{
 }
 
 header{
-    background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(img/HomePic.jpg);
+    background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(img/Farm2HomePic1.jpeg);
     height: 100vh;
     background-position: center;
     background-size: cover;
@@ -150,11 +150,13 @@ button span{
 
 .Reviews{
     margin-top: 100px;
-    background-image:  linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(img/HomePic2.jpeg);
+    background-image:  linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(img/Farm2HomePic2.jpeg);
     padding-top: 80px;
     padding-bottom: 40px;
     color: white;
     background-attachment: fixed;
+    background-position: center;
+    background-size: cover
 }
 
 .Reviews blockquote{

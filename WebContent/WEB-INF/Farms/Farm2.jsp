@@ -3,8 +3,8 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-    <title>Dixon Farm</title>
-    <link type="text/css" rel="stylesheet" href="../ChickenPages/FarmersTemplate/FarmersTemplateCss.css">
+    <title>Hesperia Family Farm</title>
+    <link type="text/css" rel="stylesheet" href="../ChickenPages/FarmersTemplate/FarmersTemplate2Css.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 	<link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
@@ -34,8 +34,7 @@
         
         <!--Displays Page Welcome-->
         <div class="Header">
-            <h1>Welcome to,<br>The Dixon Farm</h1>
-            <h href=""></h>
+            <h1>Welcome to,<br>The Hesperia Family Farm</h1>
         </div>
     </header>
     
@@ -45,10 +44,10 @@
         <h3 class="text-center">Our Service</h3>
         
         <p class="ServiceText">
-            Since 1994, we've been a local farm. We expanded our farm by buying multiple acres of land where we have sought to expand our animal inventory and start selling to local communities.
-        	We guarantee the freshness of our products as they are grown locally. We enjoy satisfying our customers with only the best farm grown hens that are caged free and with the best
-        	nutrition. Order your eggs online today and enjoy the best tasting non-GMO eggs out there! 
-        	
+            We are family farm dedicated to providing the best eggs around! Like I said, we are family farm that has been around for generations
+            and we know what our customers love! We stay committed to delivering the best quality eggs and delivering the freshness straight to your door.
+            We care about our live stock, just as much as we care about our customers and their satisfaction. Since 1887 we have dedicated the best services
+            and we plan on expanding our egg shipments to other locals in different areas!
         </p>
         
         <!-- The "<div class="col-md-3">" contains each individual section Our Service column -->
@@ -56,46 +55,45 @@
             <div class="row">
                 
                 <div class="col-md-3">
-                    <span class="glyphicon glyphicon-heart-empty"></span>
-                    <h4>Caged Free Hens</h4>
+                    <span class="glyphicon glyphicon-tree-conifer"></span>
+                    <h4>Natural Environment</h4>
                     <p class="arranging">
-                         We love our hens too! We provide the best shelter and care for animals so that they can lay the best eggs just for you! Not only do
-                         we care for our business, but we care for our live stock and that's why we keep them caged-free so that they can stay fit and produce
-                         the best eggs in town!    
+                         Our farm is located in a natural environment that takes great care of our live stock. By this we mean that our land has provided
+                         some of the most beneficial environment by giving our animals water and some of the best food source.
                     </p>
                 </div>
                 
                 <div class="col-md-3">
-                    <span class="glyphicon glyphicon-certificate"></span>
-                    <br><h4>100% Natural Eggs</h4>
+                    <span class="glyphicon glyphicon-calendar"></span>
+                    <br><h4>Open 24/7</h4>
                     <p class="arranging">
-                         The eggs are here and they are more natural than ever before! The hens are raised in the best environment and are not kept in cages.
-                         The eggs have not been modified or don't contain any enzymes. These are real eggs that are GMO-free. Give them a try!
+						That's right! We are open 24/7 so that means you can order your eggs any time of the day, any day of the week, in any month.
+						We want all our customers to enjoy all the eggs that they want at any given time, so as long as transportation services are 
+						available, then the egg will be delivered to you! 
                     </p>
                 </div>
                 
                 <div class="col-md-3">
-                    <span class="glyphicon glyphicon-grain"></span>
-                    <h4>Large Variety Feeds</h4>
+                    <span class="glyphicon glyphicon-time"></span>
+                    <h4>Fast Delivery</h4>
                     <p class="arranging">
-                         We have many live stock animals and we provide the best food and exercise especially for our hens. We take great care of our hens by providing them
-                         with daily meals throughout the day and plenty of water. We provide only the best meals for our live stock so we ensure they are getting the best
-                         nutrition.
+                         Like many other farmers, we want to ensure our customers get their eggs as soon as possible, so that they can enjoy
+                         the freshness of our eggs. There are many things we want our customers to enjoy, so we want them to enjoy the eggs as
+                         fast as possible!
                     </p>
                 </div>
                 
                 <div class="col-md-3">
-                    <span class="glyphicon glyphicon-road"></span>
-                    <h4>Fast Flash Delivery</h4>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <h4>Satisfied Customers</h4>
                     <p class="arranging">
-                         We have been hard at work to gather resources to deliver your eggs safely to your home. Get your eggs delivered to you within hours,
-                         as long as you order before 10am. Upon confirmation we will send the eggs directly to your home! Why wait? Order yours right now and
-                         get them delivered to your home within hours!
+                         We enjoy seeing our farmers satisfied, that's why we deliver the best experience for our user, so that they
+                         can return and buy more of our eggs. Don't believe us? Scroll down to the bottom of the page to see what our
+                         customers are saying!
                     </p>
                 </div>
             </div>
         </div>
-        
     </section>
     
     
@@ -118,36 +116,28 @@
             <div class="row">
                 
                 <!-- Each indivudual product picture and product info and product name -->
-                <div class="col-md-3">
-                    <img src="../ChickenPages/FarmersTemplate/img/WhiteEgg1.png" align="center">
-                    <h4 class="text-center">White Eggs</h4>
-                    <p class="text-center"> The best of it's kind is the original white egg that can be eaten with many other dishes. We are known for these eggs!
+                <div class="col-md-4">
+                    <img src="../ChickenPages/FarmersTemplate/img/BrownEgg2.jpg" align="center">
+                    <h4 class="text-center">Brown Eggs</h4>
+                    <p class="text-center"> Our brown eggs are the most favored amongst our customers and recommend them to you!
                     </p>
                     <div align="center"><button type="button" class="btn btn-primary" id="countnum1"><span class="glyphicon glyphicon-shopping-cart"></span>Add to cart</button></div>
                 </div>
                 
-                <div class="col-md-3">
-                    <img src="../ChickenPages/FarmersTemplate/img/BrownEgg1.jpg" align="center">
-                    <h4 class="text-center">Brown Eggs</h4>
-                    <p class="text-center"> The brown eggs have been cleaned after the hens have produced them. They are nice and firm too!
+                <div class="col-md-4">
+                    <img src="../ChickenPages/FarmersTemplate/img/WhiteEgg2.jpeg" align="center">
+                    <h4 class="text-center">White Eggs</h4>The white eggs has been our original from the start of this farm and our hens know it.
+                    <p class="text-center">  
                     </p>
                     <div align="center"><button type="button" class="btn btn-primary" id="countnum2"><span class="glyphicon glyphicon-shopping-cart"></span>Add to cart</button></div>
                 </div>
                 
-                <div class="col-md-3">
-                    <img src="../ChickenPages/FarmersTemplate/img/Omega1.jpg" align="center">
+                <div class="col-md-4">
+                    <img src="../ChickenPages/FarmersTemplate/img/Omega2.jpg" align="center">
                     <h4 class="text-center">Omega Eggs</h4>
-                    <p class="text-center"> The best of it's kind is the Omega egg. This egg features many more vitamins and minerals than all the other eggs!
+                    <p class="text-center"> Amongst the most nutritionist eggs that we have and contain 39% less Arachidonic Acid.
                     </p>
                     <div align="center"><button type="button" class="btn btn-primary" id="countnum3"><span class="glyphicon glyphicon-shopping-cart"></span>Add to cart</button></div>
-                </div>
-                
-                <div class="col-md-3">
-                    <img src="../ChickenPages/FarmersTemplate/img/FreeRange1.png" align="center">
-                    <h4 class="text-center">Caged Free Eggs</h4>
-                    <p class="text-center"> Even though all of our hens are caged free, these are the real eggs that are produced while the hens are outside.
-                    </p>
-                    <div align="center"><button type="button" class="btn btn-primary" id="countnum4"><span class="glyphicon glyphicon-shopping-cart"></span>Add to cart</button></div>
                 </div>
                 
             </div>
@@ -165,7 +155,8 @@
                 <div class="col-md-4">
                     <blockquote>
                         <p>
-                            "The eggs arrived on time and it was delicately handled by the farmers." - Jill Valentine
+                            "Last night I ordered some eggs for this morning and by next morning they were delivered even before I woke up.
+                            That's some commitment to the way they treat their customers." - Roi Chico
                         </p>
                     </blockquote>
                 </div>
@@ -173,7 +164,8 @@
                 <div class="col-md-4">
                     <blockquote>
                         <p>
-                            "The website was easy to use and my eggs came in with hours!" - Bob Renolds
+                            "Over the past few weeks I've been buying all the eggs from the selection they have. I can say that my favorite
+                            would have to be the omega!" - Russel Martinez
                         </p>
                     </blockquote>
                 </div>
@@ -181,7 +173,39 @@
                 <div class="col-md-4">
                     <blockquote>
                         <p>
-                            "I really recommend there premium white egg, because of how fresh it was!" - Amanda Winchester
+                            "I've been buy eggs from this farm for the past 10 years and they never fail to surprise me with their 
+                            fresh eggs." - Jared Sanchez
+                        </p>
+                    </blockquote>
+                </div>
+                
+            </div>
+            
+            
+            <!-- Second row of reviews -->
+            <div class="row">
+                
+                <div class="col-md-4">
+                    <blockquote>
+                        <p>
+                            "I've been with Hesperia family farm from the beginning and they never fail to impress." - Matthew Rodriguez
+                        </p>
+                    </blockquote>
+                </div>
+                
+                <div class="col-md-4">
+                    <blockquote>
+                        <p>
+                            "My family has enjoyed the Omega eggs for the past week and soon I will give the white eggs a try as well." - Emma Lopez
+                        </p>
+                    </blockquote>
+                </div>
+                
+                <div class="col-md-4">
+                    <blockquote>
+                        <p>
+                            "The delivery was very fast and they kept track of my order! By the time it reached my home, all the eggs
+                            were still in tact." - Mirasol Davila
                         </p>
                     </blockquote>
                 </div>
