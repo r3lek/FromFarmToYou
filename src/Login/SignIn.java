@@ -86,7 +86,7 @@ public class SignIn extends HttpServlet {
 					session.setAttribute("UserList", user);
 			
 					//redirect to other servlet
-					response.sendRedirect("../ChickenPages/index.jsp");
+					response.sendRedirect("../ChickenPages/index");
 					return;
 					
 				}

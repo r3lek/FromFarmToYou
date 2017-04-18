@@ -15,7 +15,7 @@
 <title>From The Farm To You</title>
 
 <!-- Custom css  -->
-<link rel="stylesheet" href="css/indexStyle.css">
+<link rel="stylesheet" href="../css/indexStyle.css">
 
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet"
@@ -153,7 +153,7 @@
       <div class="carousel-inner">
       
         <div class="item active">
-          <img src="images/Farm2HomePic1.jpeg">
+          <img src="../images/Farm2HomePic1.jpeg">
            <div class="carousel-caption">
             <h4><a href="#">Farm 1 (Dixon Farm)</a></h4>
             <p>This farm has white, brown, and omega eggs. This farm specializes in white eggs. <a class="label label-primary" href="insertHereURL" target="_blank">Farm 1</a></p>
@@ -161,7 +161,7 @@
         </div><!-- End Item -->
 
          <div class="item">
-          <img src="images/Farm3HomePic1.jpg">
+          <img src="../images/Farm3HomePic1.jpg">
            <div class="carousel-caption">
             <h4><a href="#">Farm 2 (Generic Farm)</a></h4>
             <p>A family owned farm, that guarantees the freshness of their eggs. Caring about their livestock and customers, this farm offers a variety of eggs. Check them out here!  <a class="label label-primary" href="InserURLHERE" target="_blank">Farm 2</a></p>
@@ -169,7 +169,7 @@
         </div><!-- End Item -->
         
         <div class="item">
-          <img src="images/HomePic.jpg">
+          <img src="../images/HomePic.jpg">
            <div class="carousel-caption">
             <h4><a href="#">Farm 3 (Other Farm)</a></h4>
             <p>After the battling and triumphing the recession, this family owned farm has grown together. This farm treats its chickens as part of the family. Check out the hens here, and maybe the owners!  <a class="label label-primary" href="InsertURLHERE" target="_blank">Farm3</a></p>
@@ -227,7 +227,7 @@ You will see the hens in their home and view their lifestyle, 24/7.">
 	</div>
 	
 	<div class = "center-block">
-		<div class = "textOverImage" style = "background-image: url(images/chickenResize.png)" 
+		<div class = "textOverImage" style = "background-image: url(../images/chickenResize.png)" 
 		data-text="Natural
 Since the webcams are available for all farms, this ensures that all the chickens are cage free.
 ">
@@ -235,7 +235,7 @@ Since the webcams are available for all farms, this ensures that all the chicken
 	</div>
 	
 	<div class = "center-block">
-		<div class = "textOverImage" style = "background-image: url(images/truckicon.png)" 
+		<div class = "textOverImage" style = "background-image: url(../images/truckicon.png)" 
 		data-text="Shipping
 Offering overnight shipping we guarantee that the eggs will be fresh upon arrival. ">
 		</div>
@@ -243,7 +243,7 @@ Offering overnight shipping we guarantee that the eggs will be fresh upon arriva
 	
 	
 	<div class = "center-block">
-		<div class = "textOverImage" style = "background-image: url(images/chickenResize.png)" 
+		<div class = "textOverImage" style = "background-image: url(../images/chickenResize.png)" 
 		data-text="Natural
 Since the webcams are available for all farms, this ensures that all the chickens are cage free.
 ">
