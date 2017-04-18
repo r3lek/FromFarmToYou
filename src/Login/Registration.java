@@ -1,6 +1,13 @@
 package Login;
 
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -27,36 +34,81 @@ public class Registration extends HttpServlet {
 		request.getRequestDispatcher("/WEB-INF/Login_Registration/Registration.jsp").forward(request, response);
 		
 	}
-
+	
+	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// get the user input
         String name = request.getParameter("name");
         String email = request.getParameter("email");
-        String username = request.getParameter("username");
-        String password = request.getParameter("password");
-        String password2 = request.getParameter("password2");
+        String usernameGiven = request.getParameter("username");
+        String passwordGiven = request.getParameter("password");
+        String password2Given = request.getParameter("password2");
         
         
         //Boolean variables to validate & display error message
         boolean validName = name != null && name.trim().length() > 0;
         boolean validEmail = email != null && email.trim().length() > 0;
-        boolean validUserName = username != null && username.trim().length() > 0;
-        boolean validPassword = password != null && password.trim().length() > 0;
-        boolean validPassword2 = password2 != null && password2.trim().length() > 0;
+        boolean validUserName = usernameGiven != null && usernameGiven.trim().length() > 0;
+        boolean validPassword = passwordGiven != null && passwordGiven.trim().length() > 0;
+        boolean validPassword2 = password2Given != null && password2Given.trim().length() > 0;
         
         
         
-        if (validName && validEmail && validUserName && validPassword && validPassword2 && password.equals(password2)){
+        if (validName && validEmail && validUserName && validPassword && validPassword2 && passwordGiven.equals(password2Given)){
         
-            //Create new user
-            SigninUser UserEntry = new SigninUser( idSeed++, name, email, username, password);
-    
-            //Get a reference to the user
-            List<SigninUser> UserEntriesList = (List<SigninUser>) getServletContext().getAttribute("UserList");
-            UserEntriesList.add(UserEntry);
-    
+        	
+            //Create new user, that matches that of the db requirements. USE PREPARED STATEMENTS
+            SigninUser UserEntry = new SigninUser( idSeed++, name, email, usernameGiven, passwordGiven, password2Given, password2Given);
+            
+            //add to database the users
+            Connection c = null; // set connection to db as null
+
+    		try {
+
+    			String url = "jdbc:mysql://localhost:3306/cs3220stu63";
+    			String username = "cs3220stu63";
+    			String password = "abcd";
+    			c = DriverManager.getConnection(url, username, password);
+    			
+    			
+    			//Create prepared statement to prevent sql injections
+    			String query = "INSERT INTO users (username, email, password) values(?,?,?)";
+    			PreparedStatement statement = c.prepareStatement(query);
+    			statement.setString(1, usernameGiven);
+    			statement.setString(2, email);
+    			statement.setString(3, passwordGiven);
+    			statement.executeUpdate();
+    			
+    			
+
+    		} catch (SQLException e) {
+    			throw new ServletException(e);
+    		}
+
+    		finally {
+    			try {
+    				if (c != null) {
+    					c.close();
+    				}
+
+    			} catch (SQLException e) {
+    				throw new ServletException(e);
+    			}
+    		}
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
             // send the user back to the guest book page
             response.sendRedirect("Signin");
+            
         }
         
         else{
@@ -66,7 +118,7 @@ public class Registration extends HttpServlet {
                 request.setAttribute("emailError", "Please enter a email");
             if(!validUserName)
                 request.setAttribute("usernameError", "Please enter a username");
-            if(!password.equals(password2))
+            if(!passwordGiven.equals(password2Given))
             	request.setAttribute("failsameError", "Passwords do not match");
             if(!validPassword)
                 request.setAttribute("passwordError", "Please enter a password");

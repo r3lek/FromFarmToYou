@@ -2,6 +2,7 @@ package Login;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -25,11 +26,11 @@ public class Homepage extends HttpServlet {
 		
 		//Deliver the session to welcome page
 		HttpSession SessionValue = request.getSession();
-		SigninUser UserObj = (SigninUser) SessionValue.getAttribute("UserList");
+		ArrayList<SigninUser>  UserObj = (ArrayList<SigninUser>) SessionValue.getAttribute("UserList");
 		
 		//These if statements will redirect to Login if user accidentally lands on Welcome page
 		if(UserObj != null){
-			out.println("Welcome " + UserObj.getName());
+			out.println("Welcome " + UserObj.get(0).getUsername());
 		}
 		
 		else{

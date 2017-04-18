@@ -45,6 +45,7 @@ public class HelloJDBC extends HttpServlet {
 		out.println("		<title> Hello Database! </title>");
 		out.println("	</head>");
 		out.println("	<body>");
+		
 		Connection c = null; // set connection to db as null
 
 		try {
@@ -54,13 +55,17 @@ public class HelloJDBC extends HttpServlet {
 			String password = "abcd";
 			c = DriverManager.getConnection(url, username, password);
 			Statement statement = c.createStatement();
-			ResultSet rs = statement.executeQuery("SELECT * FROM items");
+			ResultSet rs = statement.executeQuery("SELECT * FROM users");
 
 			while (rs.next()) {
 				out.println("<br/>");
-				out.println(rs.getString("name"));
-				out.println(rs.getString("price"));
-				out.println(rs.getFloat("quantity"));
+				out.println(rs.getInt("ids"));
+				out.println(rs.getString("first_name"));
+				out.println(rs.getString("last_name"));
+				out.println(rs.getString("username"));
+				out.println(rs.getString("email"));
+				out.println(rs.getString("password"));
+				out.println(rs.getString("status"));
 				out.println("<br/>");
 			}
 			// To get column name if for some forgot.//// ResultSetMetaData meta

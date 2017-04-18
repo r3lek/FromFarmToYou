@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <!-- Some of the design was snipped from bootsipp
 	 More specifically - http://bootsnipp.com/snippets/MRlbB, http://bootsnipp.com/snippets/featured/admin-navigation
 	 Used under MIT license
@@ -10,7 +12,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Test page</title>
+<title>From The Farm To You</title>
 
 <!-- Custom css  -->
 <link rel="stylesheet" href="css/indexStyle.css">
@@ -50,7 +52,7 @@
 <body>
 
 <!-- Nav bar below modified from bootsnip -->
-<i class="material-icons">face</i>
+<!-- i class="material-icons">face</i><!-- Can delete this with no prob -->
 
 <div class = "hold">
 <div class="container">
@@ -92,16 +94,24 @@
                     class="glyphicon glyphicon-cog"></span>Sign Up
                 </a>
                     <ul class="dropdown-menu">
-                        <li><a href="#"><span class="label label-warning">4:00 AM</span>Register Now!</a></li>
-                        <li><a href="#"><span class="label label-warning">4:30 AM</span>Login</a></li>
-                        <li><a href="#"><span class="label label-warning">5:00 AM</span>Subscriber focused email
+                        <li><a href="../Login/Registration"><!--  <span class="label label-warning">4:00 AM</span> -->Register Now!</a></li>
+                        <li><a href="../Login/Signin"><!--  <span class="label label-warning">4:30 AM</span> --> Login</a></li>
+                        <!--  <li><a href="#"><span class="label label-warning">5:00 AM</span>Subscriber focused email
                             design</a></li>
-                        <li class="divider"></li>
+                        <li class="divider"></li>-->
                         <li><a href="#" class="text-center">View All</a></li>
                     </ul>
                 </li>
                 <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span
-                    class="glyphicon glyphicon-user disabled"></span>User<b class="caret"></b></a> <!-- ADD JSP HERE THAT REFLECTS USER STATUS AND/OR NAME -->
+                    class="glyphicon glyphicon-user disabled"></span>User 
+	                    <c:forEach items="${UserList}" var="entry">
+						  <tr>
+						    <td>${entry.username}</td>
+						    
+						    
+						  </tr>
+						</c:forEach>
+                    <b class="caret"></b></a> <!-- ADD JSP HERE THAT REFLECTS USER STATUS AND/OR NAME -->
                     <ul class="dropdown-menu">
                         <li><a href="#"><span class="glyphicon glyphicon-user"></span>Profile</a></li>
                         <li><a href="#"><span class="glyphicon glyphicon-cog"></span>Settings</a></li>
@@ -143,42 +153,42 @@
       <div class="carousel-inner">
       
         <div class="item active">
-          <img src="http://placehold.it/760x400/cccccc/ffffff">
+          <img src="images/Farm2HomePic1.jpeg">
            <div class="carousel-caption">
-            <h4><a href="#">Lorem ipsum dolor sit amet consetetur sadipscing</a></h4>
-            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat. <a class="label label-primary" href="http://sevenx.de/demo/bootstrap-carousel/" target="_blank">Free Bootstrap Carousel Collection</a></p>
+            <h4><a href="#">Farm 1 (Dixon Farm)</a></h4>
+            <p>This farm has white, brown, and omega eggs. This farm specializes in white eggs. <a class="label label-primary" href="insertHereURL" target="_blank">Farm 1</a></p>
           </div>
         </div><!-- End Item -->
- 
+
          <div class="item">
-          <img src="http://placehold.it/760x400/999999/cccccc">
+          <img src="images/Farm3HomePic1.jpg">
            <div class="carousel-caption">
-            <h4><a href="#">consetetur sadipscing elitr, sed diam nonumy eirmod</a></h4>
-            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat. <a class="label label-primary" href="http://sevenx.de/demo/bootstrap-carousel/" target="_blank">Free Bootstrap Carousel Collection</a></p>
+            <h4><a href="#">Farm 2 (Generic Farm)</a></h4>
+            <p>A family owned farm, that guarantees the freshness of their eggs. Caring about their livestock and customers, this farm offers a variety of eggs. Check them out here!  <a class="label label-primary" href="InserURLHERE" target="_blank">Farm 2</a></p>
           </div>
         </div><!-- End Item -->
         
         <div class="item">
-          <img src="http://placehold.it/760x400/dddddd/333333">
+          <img src="images/HomePic.jpg">
            <div class="carousel-caption">
-            <h4><a href="#">tempor invidunt ut labore et dolore</a></h4>
-            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat. <a class="label label-primary" href="http://sevenx.de/demo/bootstrap-carousel/" target="_blank">Free Bootstrap Carousel Collection</a></p>
+            <h4><a href="#">Farm 3 (Other Farm)</a></h4>
+            <p>After the battling and triumphing the recession, this family owned farm has grown together. This farm treats its chickens as part of the family. Check out the hens here, and maybe the owners!  <a class="label label-primary" href="InsertURLHERE" target="_blank">Farm3</a></p>
           </div>
         </div><!-- End Item -->
         
         <div class="item">
           <img src="http://placehold.it/760x400/999999/cccccc">
            <div class="carousel-caption">
-            <h4><a href="#">magna aliquyam erat, sed diam voluptua</a></h4>
-            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat. <a class="label label-primary" href="http://sevenx.de/demo/bootstrap-carousel/" target="_blank">Free Bootstrap Carousel Collection</a></p>
+            <h4><a href="#">Farm 4 (Different Farm)</a></h4>
+            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat. <a class="label label-primary" href="DELETEURLHERE" target="_blank">NOT NEEDED</a></p>
           </div>
         </div><!-- End Item -->
 
         <div class="item">
           <img src="http://placehold.it/760x400/dddddd/333333">
            <div class="carousel-caption">
-            <h4><a href="#">tempor invidunt ut labore et dolore magna aliquyam erat</a></h4>
-            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat. <a class="label label-primary" href="http://sevenx.de/demo/bootstrap-carousel/" target="_blank">Free Bootstrap Carousel Collection</a></p>
+            <h4><a href="#">Farm 5 (More Farms)</a></h4>
+            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat. <a class="label label-primary" href="DELETEURLHERE" target="_blank">NOT NEEDED</a></p>
           </div>
         </div><!-- End Item -->
                 
@@ -186,11 +196,11 @@
 
 
     <ul class="list-group col-sm-4">
-      <li data-target="#myCarousel" data-slide-to="0" class="list-group-item"><h4>Lorem ipsum dolor sit amet consetetur sadipscing</h4></li>
-      <li data-target="#myCarousel" data-slide-to="1" class="list-group-item"><h4>consetetur sadipscing elitr, sed diam nonumy eirmod</h4></li>
-      <li data-target="#myCarousel" data-slide-to="2" class="list-group-item"><h4>tempor invidunt ut labore et dolore</h4></li>
-      <li data-target="#myCarousel" data-slide-to="3" class="list-group-item"><h4>magna aliquyam erat, sed diam voluptua</h4></li>
-      <li data-target="#myCarousel" data-slide-to="4" class="list-group-item"><h4>tempor invidunt ut labore et dolore magna aliquyam erat</h4></li>
+      <li data-target="#myCarousel" data-slide-to="0" class="list-group-item"><h4>Farm 1 (Dixon Farm)</h4></li>
+      <li data-target="#myCarousel" data-slide-to="1" class="list-group-item"><h4>Farm 2 (Generic Farm)</h4></li>
+      <li data-target="#myCarousel" data-slide-to="2" class="list-group-item"><h4>Farm 3 (Other Farm)</h4></li>
+      <li data-target="#myCarousel" data-slide-to="3" class="list-group-item"><h4>Farm 4 (Different Farm)</h4></li>
+      <li data-target="#myCarousel" data-slide-to="4" class="list-group-item"><h4>Farm 5 (More Farms)</h4></li>
     </ul>
 
       <!-- Controls -->
@@ -207,88 +217,40 @@
     </div><!-- End Carousel -->
 </div>   
 </div>
-
-<div class = "container"> 
-	    <h3 style="font-size: 36px;font-weight: 300;text-align: center;margin:70px 0;">El Servicio Legal que Necesita a un Precio a su Alcance</h3>
-    
-    <div class="row features-home-left">
-        <div class="col-md-7">
-            <h3>Rápido</h3>
-            <h4>Nuestro 1er. envío de documentos es en 24 hrs.</h4>
-            <p>En términos de velocidad nuestra tecnología nos permite volar. LegalProm realiza el primer envío en unas 24 horas hábiles. Con Sociedades 24 Hrs. Ud. puede incluso suscribir de inmediato con firmas electrónicas</p>
-        </div>
-        <div class="col-md-5">
-            <img alt="rapidez de legalprom" src="http://legalprom.cl/wp-content/uploads/2014/05/rapidez.jpg"/>
-        </div>
-    </div>
-  
-    <div class="row features-home-right">
-        <div class="col-md-5">
-            <img alt="legalprom es economico" src="http://legalprom.cl/wp-content/uploads/2014/05/economico.jpg"/>
-        </div>
-        <div class="col-md-7">
-            <h3>Económico</h3>
-            <h4>Un servicio del mas elevado estándar al mejor precio</h4>
-            <p>Apoyado por CORFO y Banco BCI nuestro equipo abogados, de la Pontificia Universidad Católica de Chile y Universidad de Concepción, utilizan las soluciones y cláusulas mas eficientes, afinadas durante sus mas de 10 años de experiencia</p>
-        </div>
-    </div>
-    
-    <div class="row features-home-left">
-        <div class="col-md-7">
-            <h3>Fácil y Claro</h3>
-            <h4>LegalProm es simple</h4>
-            <p>Queremos dejar atrás el tiempo en que los temas legales eran un asunto opaco en que el cliente quedaba indefenso ante una cortina de tecnicismos. Nuestros clientes agradecen que les hablemos en un idioma claro y sin ambigüedades</p>
-        </div>
-        <div class="col-md-5">
-            <img alt="claridad y facilidad de legalprom" src="http://legalprom.cl/wp-content/uploads/2014/05/claridad.jpg"/>
-        </div>
-    </div>
-    
-    <div class="row features-home-right">
-        <div class="col-md-5">
-            <img alt="rapidez de legalprom" src="http://legalprom.cl/wp-content/uploads/2014/05/rapidez.jpg"/>
-        </div>
-        <div class="col-md-7">
-            <h3>Seguro</h3>
-            <h4>Productos legales seguros a su alcance</h4>
-            <p>LegalProm registra una tasa de satisfacción de prácticamente un 100%. Nuestras sociedades han superado todos los controles bancarios y de otras entidades tales como ministerios, ChileCompra, municipalidades, etc.</p>
-        </div>
-        <a href="http://legalprom.com/por-que-legalprom/" class="btn btn-primary btn-lg" style="float:right;margin-top:50px;padding:20px;">Ver más razones para elegirnos</a>
-    </div>
-    
-    <div class="line">
-        <hr/>
-    </div>
-    
-    <h3 style="font-size: 36px;font-weight: 300;text-align: center;margin:70px 0;">Miles de Clientes Satisfechos desde 2012</h3>
-    
-    <center><img alt="" src="http://legalprom.cl/wp-content/uploads/2014/05/clientes.jpg"/></center>
-    
-    <div class="line">
-        <hr/>
-    </div>    
-    
-    <div class="row">
-        <div class="col-md-12 one-column-text">
-            <h2 style="font-size:36px;">Olvídese de Trámites y Complicaciones</h2>
-            <h3 style="font-size:24px;">Déje sus asuntos en manos de nuestro equipo y ocupe su tiempo su negocio</h3>
-        </div>
-    </div>
-    
-    <div class="row buttons-who-we-are">
-        <div clas="col-md-6">
-            <a class="btn btn-primary btn-lg" style="float:left; width:30%;margin:10%; padding:30px;">Registrar su marca</a>
-        </div>
-        <div clas="col-md-6">
-            <a class="btn btn-info btn-lg" style="float:right;width:30%; margin:10%; padding:30px;">Crear su empresa</a>
-        </div>
-        
-    </div>
-
-</div>
-
-
-
+	<!-- Bottom of page, includes webcam, and truck icon -->
+	<div class = "center-block">
+		<div class = "textOverImage" style = "background-image: url('https://olimex.files.wordpress.com/2013/03/webcam.png')" 
+		data-text="Webcams
+We offer a webcams for all the farms we partner with. 
+You will see the hens in their home and view their lifestyle, 24/7.">
+		</div>
+	</div>
+	
+	<div class = "center-block">
+		<div class = "textOverImage" style = "background-image: url(images/chickenResize.png)" 
+		data-text="Natural
+Since the webcams are available for all farms, this ensures that all the chickens are cage free.
+">
+		</div>
+	</div>
+	
+	<div class = "center-block">
+		<div class = "textOverImage" style = "background-image: url(images/truckicon.png)" 
+		data-text="Shipping
+Offering overnight shipping we guarantee that the eggs will be fresh upon arrival. ">
+		</div>
+	</div>
+	
+	
+	<div class = "center-block">
+		<div class = "textOverImage" style = "background-image: url(images/chickenResize.png)" 
+		data-text="Natural
+Since the webcams are available for all farms, this ensures that all the chickens are cage free.
+">
+		</div>
+	</div>
+	
+	
 
 </body>
 </html>
