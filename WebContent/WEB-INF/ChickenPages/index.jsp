@@ -75,9 +75,9 @@
                 <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span
                     class="glyphicon glyphicon-list-alt"></span>Farms <b class="caret"></b></a>
                     <ul class="dropdown-menu">
-                        <li><a href="#">Dixon Farm</a></li>
-                        <li><a href="#">Generic Farm</a></li>
-                        <li><a href="#">Other Farm</a></li>
+                        <li><a href="../Farms/FarmController">Dixon Farm</a></li>
+                        <li><a href="../Farms/Farm2Controller">Generic Farm</a></li>
+                        <li><a href="../Farms/Farm3Controller">Other Farm</a></li>
                         <li class="divider"></li>
                         <li><a href="#">Separated link</a></li>
                         <li class="divider"></li>
@@ -217,40 +217,47 @@
     </div><!-- End Carousel -->
 </div>   
 </div>
+
+
+<section id="sec">
+ <div class="container">
+ 	<div class="row">
+
+		<div class="col-md-4">
 	<!-- Bottom of page, includes webcam, and truck icon -->
-	<div class = "center-block">
-		<div class = "textOverImage" style = "background-image: url('https://olimex.files.wordpress.com/2013/03/webcam.png')" 
-		data-text="Webcams
+			<div class = "center-block">
+			<div class = "textOverImage" style = "background-image: url('https://olimex.files.wordpress.com/2013/03/webcam.png')" 
+			data-text="Webcams
 We offer a webcams for all the farms we partner with. 
 You will see the hens in their home and view their lifestyle, 24/7.">
+			</div>
+			</div>
+		</div>
+		
+		
+	<div class="col-md-4">
+		<div class = "center-block">
+			<div class = "textOverImage" style = "background-image: url(../images/chickenResize.png)" 
+			data-text="Natural
+	Since the webcams are available for all farms, this ensures that all the chickens are cage free.
+	">
+		</div>
 		</div>
 	</div>
 	
-	<div class = "center-block">
-		<div class = "textOverImage" style = "background-image: url(../images/chickenResize.png)" 
-		data-text="Natural
-Since the webcams are available for all farms, this ensures that all the chickens are cage free.
-">
-		</div>
-	</div>
 	
-	<div class = "center-block">
-		<div class = "textOverImage" style = "background-image: url(../images/truckicon.png)" 
-		data-text="Shipping
+	<div class="col-md-4">
+		<div class = "center-block">
+			<div class = "textOverImage" style = "background-image: url(../images/truckicon.png)" 
+			data-text="Shipping
 Offering overnight shipping we guarantee that the eggs will be fresh upon arrival. ">
+			</div>
 		</div>
 	</div>
 	
-	
-	<div class = "center-block">
-		<div class = "textOverImage" style = "background-image: url(../images/chickenResize.png)" 
-		data-text="Natural
-Since the webcams are available for all farms, this ensures that all the chickens are cage free.
-">
-		</div>
 	</div>
-	
-	
+</div>
+</section>	
 
 </body>
 </html>

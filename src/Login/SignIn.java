@@ -87,8 +87,7 @@ public class SignIn extends HttpServlet {
 			
 					//redirect to other servlet
 					response.sendRedirect("../ChickenPages/index");
-					return;
-					
+					return;	
 				}
 				
 
