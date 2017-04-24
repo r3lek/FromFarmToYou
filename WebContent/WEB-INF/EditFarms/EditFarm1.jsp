@@ -1,8 +1,12 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql" %>    
 
 
+
+	
+	
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -16,14 +20,20 @@
 </head>
 
 <body>
-    <sql:setDataSource var="farmedit" driver="com.mysql.jdbc.Driver" url="jdbc:mysql://localhost/cs3220stu63" user="cs3220stu63"  password="abcd"/>
-	<sql:query dataSource="${farmedit}" var="result">SELECT * from farmerInfo WHERE id = 1; </sql:query>
-	<sql:query dataSource="${farmedit}" var="egg1">SELECT * from inventory WHERE id = 1; </sql:query>
-	<sql:query dataSource="${farmedit}" var="egg2">SELECT * from inventory WHERE id = 2; </sql:query>
-	<sql:query dataSource="${farmedit}" var="egg3">SELECT * from inventory WHERE id = 3; </sql:query>
-	<sql:query dataSource="${farmedit}" var="egg4">SELECT * from inventory WHERE id = 4;</sql:query>
+    <sql:setDataSource var="farmedit" driver="com.mysql.jdbc.Driver"
+     url="jdbc:mysql://localhost/cs3220stu63"
+     user="cs3220stu63"  password="abcd"/>
+
+	<sql:query dataSource="${farmedit}" var="result">
+	SELECT * from farmerInfo WHERE id = 1;
+	</sql:query>
+    
+
+
+<form action="EditFarm1" method="post">    
     <header id="cartNum">   
         <div class="nav">
+            
             <!-- NavBar -->
             <ul class="main-nav-bar">
             	<li><a href="#">User</a></li>
@@ -42,9 +52,10 @@
         <div class="Header">
             <h1>
           		<c:forEach var="row" items="${result.rows}">
-					${row.h1_header}
+					Your title header: <input type="text" name="h1_header" style="background-color:black;" value="${row.h1_header}"/>
 				</c:forEach>  
             </h1>
+            
             <h href=""></h>
         </div>
     </header>
@@ -55,9 +66,10 @@
         <h3 class="text-center">Our Service</h3>
         
         <p class="ServiceText">
-            <c:forEach var="row" items="${result.rows}">
-				${row.service_text}
+           	<c:forEach var="row" items="${result.rows}">
+				<textarea name="service_text" rows="6" cols="120">${row.service_text}</textarea><br>
 			</c:forEach>  
+        	
         </p>
         
         <!-- The "<div class="col-md-3">" contains each individual section Our Service column -->
@@ -68,12 +80,12 @@
                     <span class="glyphicon glyphicon-heart-empty"></span>
                     <h4>
                     	<c:forEach var="row" items="${result.rows}">
-							${row.first_h4}
+						Your title header: <input type="text" name="first_h4" value="${row.first_h4}"/>
 						</c:forEach> 
                     </h4>
                     <p class="arranging">
                     	<c:forEach var="row" items="${result.rows}">
-							${row.arranging_text}
+							Description: <textarea name="arranging_text" rows="6" cols="35">${row.arranging_text}</textarea><br>
 						</c:forEach>  
                     </p>
                 </div>
@@ -83,12 +95,12 @@
                     <br>
                     <h4>
                     	<c:forEach var="row" items="${result.rows}">
-						${row.second_h4}
+						Your 2nd title header: <input type="text" name="second_h4" value="${row.second_h4}"/>
 						</c:forEach> 
                     </h4>
                     <p class="arranging">
                          <c:forEach var="row" items="${result.rows}">
-							${row.arranging2_text}<br>
+							Description: <textarea name="arranging2_text" rows="6" cols="35">${row.arranging2_text}</textarea><br>
 						</c:forEach>  
                     </p>
                 </div>
@@ -97,12 +109,12 @@
                     <span class="glyphicon glyphicon-grain"></span>
                     <h4>
                     	<c:forEach var="row" items="${result.rows}">
-						${row.third_h4}
+						Your 3rd title header: <input type="text" name="third_h4" value="${row.third_h4}"/>
 						</c:forEach> 
                     </h4>
                     <p class="arranging">
                          <c:forEach var="row" items="${result.rows}">
-							${row.arranging3_text}<br>
+							Description: <textarea name="arranging3_text" rows="6" cols="35">${row.arranging3_text}</textarea><br>
 						</c:forEach>  
                     </p>
                 </div>
@@ -111,12 +123,12 @@
                     <span class="glyphicon glyphicon-road"></span>
                     <h4>
                     	<c:forEach var="row" items="${result.rows}">
-						${row.fourth_h4}
+						Your 4th title header: <input type="text" name="fourth_h4" value="${row.fourth_h4}"/>
 						</c:forEach> 
                     </h4>
                     <p class="arranging">
                          <c:forEach var="row" items="${result.rows}">
-							${row.arranging4_text}<br>
+							Description: <textarea name="arranging4_text" rows="6" cols="35">${row.arranging4_text}</textarea><br>
 						</c:forEach>  
                     </p>
                 </div>
@@ -124,6 +136,8 @@
         </div>
         
     </section>
+    <br><div style="text-align:center;"> <input type="submit" name="save" value="Save" /> </div>
+</form> 											<!-- this is where button that edits save page goes into -->
     
     
     <!-- Webcam Potion -->
@@ -147,73 +161,38 @@
                 <!-- Each indivudual product picture and product info and product name -->
                 <div class="col-md-3">
                     <img src="../ChickenPages/FarmersTemplate/img/WhiteEgg1.png" align="center">
-                    <h4 class="text-center"> <!-- STORE THE NAME INSIDE THE VALUE, OF A HIDDEN FORM, and get it uppon submit in controller -->
-                    	<c:forEach var="row" items="${egg1.rows}">
-							${row.name}<br>
-						</c:forEach>  
-                    </h4>
-                    <p class="text-center"> 
-                    	<c:forEach var="row" items="${egg1.rows}">
-							${row.description}<br>
-						</c:forEach> 
+                    <h4 class="text-center">White Eggs</h4>
+                    <p class="text-center"> The best of it's kind is the original white egg that can be eaten with many other dishes. We are known for these eggs!
                     </p>
                     <div align="center"><button type="button" class="btn btn-primary" id="countnum1"><span class="glyphicon glyphicon-shopping-cart"></span>Add to cart</button></div>
                 </div>
                 
                 <div class="col-md-3">
                     <img src="../ChickenPages/FarmersTemplate/img/BrownEgg1.jpg" align="center">
-                    <h4 class="text-center">
-                    	<c:forEach var="row" items="${egg2.rows}">
-							${row.name} <br>
-						</c:forEach>
-                    </h4>
-                    <p class="text-center"> 
-                    	<c:forEach var="row" items="${egg2.rows}">
-							${row.description}<br>
-						</c:forEach> 
+                    <h4 class="text-center">Brown Eggs</h4>
+                    <p class="text-center"> The brown eggs have been cleaned after the hens have produced them. They are nice and firm too!
                     </p>
                     <div align="center"><button type="button" class="btn btn-primary" id="countnum2"><span class="glyphicon glyphicon-shopping-cart"></span>Add to cart</button></div>
                 </div>
                 
                 <div class="col-md-3">
                     <img src="../ChickenPages/FarmersTemplate/img/Omega1.jpg" align="center">
-                    <h4 class="text-center">
-                    	<c:forEach var="row" items="${egg3.rows}">
-							${row.name} <br>
-						</c:forEach>
-                    </h4>
-                    <p class="text-center">
-                    	<c:forEach var="row" items="${egg3.rows}">
-							${row.description}<br>
-						</c:forEach> 
+                    <h4 class="text-center">Omega Eggs</h4>
+                    <p class="text-center"> The best of it's kind is the Omega egg. This egg features many more vitamins and minerals than all the other eggs!
                     </p>
                     <div align="center"><button type="button" class="btn btn-primary" id="countnum3"><span class="glyphicon glyphicon-shopping-cart"></span>Add to cart</button></div>
                 </div>
                 
                 <div class="col-md-3">
                     <img src="../ChickenPages/FarmersTemplate/img/FreeRange1.png" align="center">
-                    <h4 class="text-center">
-                    	<c:forEach var="row" items="${egg4.rows}">
-							${row.name} <br>
-						</c:forEach>
-                    </h4>
-                    <p class="text-center"> 
-                    	<c:forEach var="row" items="${egg4.rows}">
-							${row.description}<br>
-							 <span class="label label-default">${row.price}</span>
-						</c:forEach> 
+                    <h4 class="text-center">Caged Free Eggs</h4>
+                    <p class="text-center"> Even though all of our hens are caged free, these are the real eggs that are produced while the hens are outside.
                     </p>
-                    <div align="center"><button type="submit" class="btn btn-primary" id="countnum4" action="ShoppingCartController"><span class="glyphicon glyphicon-shopping-cart"></span>Add to cart</button></div>
+                    <div align="center"><button type="button" class="btn btn-primary" id="countnum4"><span class="glyphicon glyphicon-shopping-cart"></span>Add to cart</button></div>
                 </div>
-                <!-- WHEN SUBMIT GET THE ID AND NAME THEN IN CONTROLLER GET NAME OF EGG AND BASED ON THAT GET THE IMAGE URL(PUT IN MYSQL) AND DISPLAY IN JSP -->
+                
             </div>
         </div>
-    
-      <form action="ShoppingCartController" method="get">
-	  	  First name: <input type="text" name="fname"><br>
-		  Last name: <input type="text" name="lname"><br>
-		  <input type="submit" value="Submit">
-	</form>
     
     </section>
     
@@ -252,6 +231,7 @@
         </div>
     </section>
     
+
 <!-- 
     <section>
         <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d13209.27002674189!2d-118.05343232575291!3d34.13821819134137!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1492009553375" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
