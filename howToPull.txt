@@ -1,0 +1,9 @@
+If you havent already create a new "dynamic web project" named "ChickenSite" ideally under the same workspace for cs3220. 
+got here => https://github.com/r3lek/FromFarmToYou
+Click "clone or download" then copy the link via SSH
+Go inside the workspace, and go inside "ChickenSite"
+After that paste the download link
+Next go inside "FromFarmToYou" and copy all files
+Now go back to ChickenSite directory and paste files there and replace if asked to.
+Then delete "FromFarmToYou"
+ALSO HAVE YOUR OWN REPO!
