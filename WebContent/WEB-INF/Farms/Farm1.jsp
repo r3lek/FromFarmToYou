@@ -34,7 +34,7 @@
         
         <!--Displays Page Welcome-->
         <div class="Header">
-            <h1>Welcome to,<br>The Dixon Farm</h1>
+            <h1>Welcome to, The Dixon Farm</h1>
             <h href=""></h>
         </div>
     </header>

@@ -75,11 +75,11 @@
                 <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span
                     class="glyphicon glyphicon-list-alt"></span>Farms <b class="caret"></b></a>
                     <ul class="dropdown-menu">
-                        <li><a href="#">Dixon Farm</a></li>
-                        <li><a href="#">Generic Farm</a></li>
-                        <li><a href="#">Other Farm</a></li>
+                        <li><a href="../Farms/FarmController">Dixon Farm</a></li>
+                        <li><a href="../Farms/Farm2Controller">Generic Farm</a></li>
+                        <li><a href="../Farms/Farm3Controller">Other Farm</a></li>
                         <li class="divider"></li>
-                        <li><a href="#">Separated link</a></li>
+                        <li><a href="../Review/CustomerReviews">Reviews</a></li>
                         <li class="divider"></li>
                         <li><a href="#">One more separated link</a></li>
                     </ul>
@@ -218,6 +218,10 @@
 </div>   
 </div>
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 98fd36533a9a518cfbd1b0ac3f2126212901b527
 <section id="sec">
  <div class="container">
  	<div class="row">
@@ -256,7 +260,11 @@ Offering overnight shipping we guarantee that the eggs will be fresh upon arriva
 	
 	</div>
 </div>
+<<<<<<< HEAD
 </section>
+=======
+</section>	
+>>>>>>> 98fd36533a9a518cfbd1b0ac3f2126212901b527
 
 </body>
 </html>
