@@ -69,7 +69,7 @@
                         <li><a href="#">One more separated link</a></li>
                     </ul>
                 </li>
-                <li class=""><a href="#"><span class="glyphicon glyphicon-pencil"></span>Contact Us</a></li>
+                <li class=""><a href="../ContactUs/ContactUsModule"><span class="glyphicon glyphicon-pencil"></span>Contact Us</a></li>
                 
             </ul>
             <ul class="nav navbar-nav navbar-right">
@@ -101,7 +101,7 @@
                         <li><a href="#"><span class="glyphicon glyphicon-user"></span>Profile</a></li>
                         <li><a href="#"><span class="glyphicon glyphicon-cog"></span>Settings</a></li>
                         <li class="divider"></li>
-                        <li><a href="#"><span class="glyphicon glyphicon-off"></span>Logout</a></li>
+                        <li><a href="../chickenPages/Logout"><span class="glyphicon glyphicon-off"></span>Logout</a></li>
                     </ul>
                 </li>
                 
