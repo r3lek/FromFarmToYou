@@ -1,12 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql" %>  
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-<link rel="stylesheet" href="../css/ContactUsCSS.css">
+<link rel="stylesheet" href="../css/ViewProfileCSS.css">
 
 <!-- Jquery cdn -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
@@ -17,13 +21,14 @@
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 
-<title>Contact Us</title>
+<title>Profile</title>
 </head>
 <body>
 
+
 	<div class="jumbotron" id="HeaderTop">
 		<div align="center">
-			<h1>Contact Us</h1>
+			<h1>View Profile</h1>
 		</div>
 		<p></p>
 		
@@ -104,7 +109,7 @@
 		                    </ul>
 		                </li>
 		                 -->
-		                
+        
 		            </ul>
 		        </div>
 		        <!-- /.navbar-collapse -->
@@ -112,27 +117,20 @@
 		</div>
 	</div>
 </div>
-	
-	
-	
-	
-	
-	
-	
-	
+
 
 <div align="center">
-	<form action="ContactUsModule" method="Post">
-	Enter your name
-	<br><input type="text" id="NameBoxID" name="name"><br><br>
-	
-	Enter your email
-	<br><input type="text" id="EmailBoxID" name="email"><br><br>
-	
-	Enter your comment<br><textarea cols="50" id="TextBoxID" name="comment" rows="5"></textarea>
-	<br><br> <input type="submit" value="Submit" style="color: #005A31"> <br><br>
-	</form>
+	<c:forEach items="${UserList}" var="entry">
+	  
+	  	<h2>First name: </h2><h3>${entry.first_name}</h3><br>
+	  	<h2>Last name: </h2><h3>${entry.last_name}</h3><br>
+	    <h2>Username: </h2><h3>${entry.username}</h3><br>
+	    <h2>Email: </h2><h3>${entry.email}</h3>
+	  
+	</c:forEach>
 </div>
+	
+
 
 </body>
 </html>

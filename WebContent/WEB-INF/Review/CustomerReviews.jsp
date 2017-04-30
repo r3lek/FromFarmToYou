@@ -56,17 +56,15 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
                 <li class="active"><a href="../ChickenPages/index"><span class="glyphicon glyphicon-home"></span>Home</a></li>
-                <li><a href="#"><span class="glyphicon glyphicon-book"></span>About Us</a></li>
+                <li><a href="../chickenPages/AboutUs"><span class="glyphicon glyphicon-book"></span>About Us</a></li>
                 <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span
                     class="glyphicon glyphicon-list-alt"></span>Farms <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li><a href="../Farms/FarmController">Dixon Farm</a></li>
-                        <li><a href="../Farms/Farm2Controller">Generic Farm</a></li>
-                        <li><a href="../Farms/Farm3Controller">Other Farm</a></li>
+                        <li><a href="../Farms/Farm2Controller">Hesperia Farm</a></li>
+                        <li><a href="../Farms/Farm3Controller">Westwick Rooke Farm</a></li>
                         <li class="divider"></li>
                         <li><a href="../Review/CustomerReviews">Reviews</a></li>
-                        <li class="divider"></li>
-                        <li><a href="#">One more separated link</a></li>
                     </ul>
                 </li>
                 <li class=""><a href="../ContactUs/ContactUsModule"><span class="glyphicon glyphicon-pencil"></span>Contact Us</a></li>
@@ -84,7 +82,6 @@
                         <!--  <li><a href="#"><span class="label label-warning">5:00 AM</span>Subscriber focused email
                             design</a></li>
                         <li class="divider"></li>-->
-                        <li><a href="#" class="text-center">View All</a></li>
                     </ul>
                 </li>
                 <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span
@@ -98,8 +95,7 @@
 						</c:forEach>
                     <b class="caret"></b></a> <!-- ADD JSP HERE THAT REFLECTS USER STATUS AND/OR NAME -->
                     <ul class="dropdown-menu">
-                        <li><a href="#"><span class="glyphicon glyphicon-user"></span>Profile</a></li>
-                        <li><a href="#"><span class="glyphicon glyphicon-cog"></span>Settings</a></li>
+                        <li><a href="../chickenPages/Profile"><span class="glyphicon glyphicon-user"></span>Profile</a></li>
                         <li class="divider"></li>
                         <li><a href="../chickenPages/Logout"><span class="glyphicon glyphicon-off"></span>Logout</a></li>
                     </ul>
@@ -121,7 +117,6 @@
                     </ul>
                 </li>
                  -->
-                
             </ul>
         </div>
         <!-- /.navbar-collapse -->
