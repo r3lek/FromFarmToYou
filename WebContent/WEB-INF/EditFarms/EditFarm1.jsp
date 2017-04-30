@@ -23,9 +23,19 @@
     <sql:setDataSource var="farmedit" driver="com.mysql.jdbc.Driver"
      url="jdbc:mysql://localhost/cs3220stu63"
      user="cs3220stu63"  password="abcd"/>
+	
+	<sql:query dataSource="${farmedit}" var="result">SELECT * from farmerInfo WHERE id = 1; </sql:query>
+	<sql:query dataSource="${farmedit}" var="egg1">SELECT * from inventory WHERE id = 1; </sql:query>
+	<sql:query dataSource="${farmedit}" var="egg2">SELECT * from inventory WHERE id = 2; </sql:query>
+	<sql:query dataSource="${farmedit}" var="egg3">SELECT * from inventory WHERE id = 3; </sql:query>
+	<sql:query dataSource="${farmedit}" var="egg4">SELECT * from inventory WHERE id = 4;</sql:query>
 
 	<sql:query dataSource="${farmedit}" var="result">
 	SELECT * from farmerInfo WHERE id = 1;
+	</sql:query>
+	
+	<sql:query dataSource="${farmedit}" var="editEgg">
+	SELECT * from inventory WHERE farm_num = 1;
 	</sql:query>
     
 
@@ -136,8 +146,7 @@
         </div>
         
     </section>
-    <br><div style="text-align:center;"> <input type="submit" name="save" value="Save" /> </div>
-</form> 											<!-- this is where button that edits save page goes into -->
+
     
     
     <!-- Webcam Potion -->
@@ -152,6 +161,7 @@
     
     <!-- Products -->
     <section class="Products">
+    
         
         <h3 class="text-center" id="Products">Products</h3>
 
@@ -159,42 +169,72 @@
             <div class="row">
                 
                 <!-- Each indivudual product picture and product info and product name -->
+                <!-- Egg 1 -->
                 <div class="col-md-3">
                     <img src="../ChickenPages/FarmersTemplate/img/WhiteEgg1.png" align="center">
-                    <h4 class="text-center">White Eggs</h4>
-                    <p class="text-center"> The best of it's kind is the original white egg that can be eaten with many other dishes. We are known for these eggs!
-                    </p>
-                    <div align="center"><button type="button" class="btn btn-primary" id="countnum1"><span class="glyphicon glyphicon-shopping-cart"></span>Add to cart</button></div>
+                    <h4 class="text-center">
+                    	<c:forEach var="row" items="${egg1.rows}">
+							Change egg name: <input type="text" name="egg1Name" value="${row.name}"/> <br>
+							Change description: <textarea name="egg1Description" rows="6" cols="25">${row.description}</textarea><br>
+							Edit Quantity: <input type="number" name="egg1Quantity" value="${row.quantity}"/> <br>
+							Edit price: <input type="text" name="egg1Price" value="${row.price}"/> <br>
+						</c:forEach>
+                    </h4>
+                    
                 </div>
                 
+                <!-- Egg 2 -->
                 <div class="col-md-3">
                     <img src="../ChickenPages/FarmersTemplate/img/BrownEgg1.jpg" align="center">
-                    <h4 class="text-center">Brown Eggs</h4>
-                    <p class="text-center"> The brown eggs have been cleaned after the hens have produced them. They are nice and firm too!
-                    </p>
-                    <div align="center"><button type="button" class="btn btn-primary" id="countnum2"><span class="glyphicon glyphicon-shopping-cart"></span>Add to cart</button></div>
+                    <h4 class="text-center">
+                    	<c:forEach var="row" items="${egg2.rows}">
+							Change egg name: <input type="text" name="egg2Name" value="${row.name}"/> <br>
+							Change description: <textarea name="egg2Description" rows="6" cols="25">${row.description}</textarea><br>
+							Edit Quantity: <input type="number" name="egg2Quantity" value="${row.quantity}"/> <br>
+							Edit price: <input type="text" name="egg2Price" value="${row.price}"/> <br>
+						</c:forEach>
+                    </h4>
+                    
                 </div>
                 
+                
+                
+                <!-- Edit egg 3 -->
                 <div class="col-md-3">
                     <img src="../ChickenPages/FarmersTemplate/img/Omega1.jpg" align="center">
-                    <h4 class="text-center">Omega Eggs</h4>
-                    <p class="text-center"> The best of it's kind is the Omega egg. This egg features many more vitamins and minerals than all the other eggs!
-                    </p>
-                    <div align="center"><button type="button" class="btn btn-primary" id="countnum3"><span class="glyphicon glyphicon-shopping-cart"></span>Add to cart</button></div>
+                    <h4 class="text-center">
+                    	<c:forEach var="row" items="${egg3.rows}">
+							Change egg name: <input type="text" name="egg3Name" value="${row.name}"/> <br>
+							Change description: <textarea name="egg3Description" rows="6" cols="25">${row.description}</textarea><br>
+							Edit Quantity: <input type="number" name="egg3Quantity" value="${row.quantity}"/> <br>
+							Edit price: <input type="text" name="egg3Price" value="${row.price}"/> <br>
+						</c:forEach>
+                    </h4>
+                    
                 </div>
                 
-                <div class="col-md-3">
+                
+                <!--  Start of egg 4  -->
+                 <div class="col-md-3">
                     <img src="../ChickenPages/FarmersTemplate/img/FreeRange1.png" align="center">
-                    <h4 class="text-center">Caged Free Eggs</h4>
-                    <p class="text-center"> Even though all of our hens are caged free, these are the real eggs that are produced while the hens are outside.
-                    </p>
-                    <div align="center"><button type="button" class="btn btn-primary" id="countnum4"><span class="glyphicon glyphicon-shopping-cart"></span>Add to cart</button></div>
-                </div>
+                    <h4 class="text-center">
+                    	<c:forEach var="row" items="${egg4.rows}">
+							Change egg name: <input type="text" name="egg4Name" value="${row.name}"/> <br>
+							Change description: <textarea name="egg4Description" rows="6" cols="25">${row.description}</textarea><br>
+							Edit Quantity: <input type="number" name="egg4Quantity" value="${row.quantity}"/> <br>
+							Edit price: <input type="text" name="egg4Price" value="${row.price}"/> <br>
+						</c:forEach>
+                    </h4>
+               </div>
+               
+               
                 
             </div>
         </div>
-    
+    	<br><div style="text-align:center;"> <input type="submit" name="save" value="Save" /> </div>
+			<!-- this is where button that edits save page goes into -->
     </section>
+    </form> 
     
     <section class="Reviews" id="Reviews">
         
@@ -229,6 +269,8 @@
                 
             </div>
         </div>
+        
+            
     </section>
     
 

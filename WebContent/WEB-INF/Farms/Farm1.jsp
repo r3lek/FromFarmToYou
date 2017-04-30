@@ -22,6 +22,7 @@
 	<sql:query dataSource="${farmedit}" var="egg2">SELECT * from inventory WHERE id = 2; </sql:query>
 	<sql:query dataSource="${farmedit}" var="egg3">SELECT * from inventory WHERE id = 3; </sql:query>
 	<sql:query dataSource="${farmedit}" var="egg4">SELECT * from inventory WHERE id = 4;</sql:query>
+    
     <header id="cartNum">   
         <div class="nav">
             <!-- NavBar -->
@@ -128,10 +129,10 @@
     
     <!-- Webcam Potion -->
     <section class="webcam" id="Webcam">
-        <h3 class="text-center">Live Webcam</h3>
+        <h3 class="text-center"><a href = "http://172.91.8.97:81" target="_blank">Live Webcam </a> </h3>
         
         <div align="center">
-        <iframe width="853" height="480" src="https://www.youtube.com/embed/EVQtg5eTJvs?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+        <iframe width="853" height="480" src="http://172.91.8.97:81" frameborder="0" allowfullscreen></iframe>
         </div>
     </section>
     
@@ -141,40 +142,68 @@
         
         <h3 class="text-center" id="Products">Products</h3>
 
+
         <div class="container">
             <div class="row">
                 
-                <!-- Each indivudual product picture and product info and product name -->
-                <div class="col-md-3">
+     			 <!--  Start of egg 1  -->
+                 <div class="col-md-3">
                     <img src="../ChickenPages/FarmersTemplate/img/WhiteEgg1.png" align="center">
-                    <h4 class="text-center"> <!-- STORE THE NAME INSIDE THE VALUE, OF A HIDDEN FORM, and get it uppon submit in controller -->
+                    <h4 class="text-center">
                     	<c:forEach var="row" items="${egg1.rows}">
-							${row.name}<br>
-						</c:forEach>  
+							${row.name} <br>
+						</c:forEach>
                     </h4>
+
                     <p class="text-center"> 
                     	<c:forEach var="row" items="${egg1.rows}">
 							${row.description}<br>
-						</c:forEach> 
+							<span class="label label-default">${row.price}</span>
+							
+							<form action="ShoppingCartController" method="POST">
+		                    <div align="center">
+		                    <input type="number" name="quantity" min="0" max="${row.quantity}" value = "0">
+		                    <button type="submit" class="btn btn-primary" id="countnum1" formaction="ShoppingCartController"><span class="glyphicon glyphicon-shopping-cart"></span>Add to cart</button></div>
+		                	<input type="hidden" name="name" value="${row.name}">
+		                	<input type="hidden" name="price" value="${row.price}"> 
+		                	<input type = "hidden" name = "id" value = "${row.id}" >
+		                	
+							</form>
+						</c:forEach>  
                     </p>
-                    <div align="center"><button type="button" class="btn btn-primary" id="countnum1"><span class="glyphicon glyphicon-shopping-cart"></span>Add to cart</button></div>
-                </div>
+                </div>            
                 
-                <div class="col-md-3">
+                
+                
+            <!--  Start of egg 2  -->
+                 <div class="col-md-3">
                     <img src="../ChickenPages/FarmersTemplate/img/BrownEgg1.jpg" align="center">
                     <h4 class="text-center">
                     	<c:forEach var="row" items="${egg2.rows}">
 							${row.name} <br>
 						</c:forEach>
                     </h4>
+
                     <p class="text-center"> 
                     	<c:forEach var="row" items="${egg2.rows}">
 							${row.description}<br>
-						</c:forEach> 
+							<span class="label label-default">${row.price}</span>
+							
+							<form action="ShoppingCartController" method="POST">
+		                    <div align="center">
+		                    <input type="number" name="quantity" min="0" max="${row.quantity}" value = "0">
+		                    <button type="submit" class="btn btn-primary" id="countnum2" formaction="ShoppingCartController"><span class="glyphicon glyphicon-shopping-cart"></span>Add to cart</button></div>
+		                	<input type="hidden" name="name" value="${row.name}">
+		                	<input type="hidden" name="price" value="${row.price}"> 
+		                	<input type = "hidden" name = "id" value = "${row.id}" >
+							</form>
+						</c:forEach>  
                     </p>
-                    <div align="center"><button type="button" class="btn btn-primary" id="countnum2"><span class="glyphicon glyphicon-shopping-cart"></span>Add to cart</button></div>
                 </div>
+
                 
+                
+                <!-- Start of Egg 3 -->
                 <div class="col-md-3">
                     <img src="../ChickenPages/FarmersTemplate/img/Omega1.jpg" align="center">
                     <h4 class="text-center">
@@ -182,40 +211,60 @@
 							${row.name} <br>
 						</c:forEach>
                     </h4>
-                    <p class="text-center">
+
+                    <p class="text-center"> 
                     	<c:forEach var="row" items="${egg3.rows}">
 							${row.description}<br>
-						</c:forEach> 
+							<span class="label label-default">${row.price}</span>
+							
+							<form action="ShoppingCartController" method="POST">
+		                    <div align="center">
+		                    <input type="number" name="quantity" min="0" max="${row.quantity}" value = "0">
+		                    <button type="submit" class="btn btn-primary" id="countnum3" formaction="ShoppingCartController"><span class="glyphicon glyphicon-shopping-cart"></span>Add to cart</button></div>
+		                	<input type="hidden" name="name" value="${row.name}">
+		                	<input type="hidden" name="price" value="${row.price}"> 
+		                	<input type = "hidden" name = "id" value = "${row.id}" >
+							</form>
+							
+							<!-- ENCLOSE EVERYTHING UNDER A FORM, THAT WAY U CAN GET MULTIPLE QUANTITY, NAME, AND PRICE. ENCLOSE SINCE TOP TO BOTTOM -->
+						</c:forEach>  
                     </p>
-                    <div align="center"><button type="button" class="btn btn-primary" id="countnum3"><span class="glyphicon glyphicon-shopping-cart"></span>Add to cart</button></div>
+                   
                 </div>
                 
-                <div class="col-md-3">
+                
+                
+                <!--  Start of egg 4  -->
+                 <div class="col-md-3">
                     <img src="../ChickenPages/FarmersTemplate/img/FreeRange1.png" align="center">
                     <h4 class="text-center">
                     	<c:forEach var="row" items="${egg4.rows}">
 							${row.name} <br>
 						</c:forEach>
                     </h4>
+
                     <p class="text-center"> 
                     	<c:forEach var="row" items="${egg4.rows}">
 							${row.description}<br>
-							 <span class="label label-default">${row.price}</span>
-						</c:forEach> 
+							<span class="label label-default">${row.price}</span>
+							
+							<form action="ShoppingCartController" method="POST">
+		                    <div align="center">
+		                    <input type="number" name="quantity" min="0" max="${row.quantity}" value = "0">
+		                    <button type="submit" class="btn btn-primary" id="countnum4" formaction="ShoppingCartController"><span class="glyphicon glyphicon-shopping-cart"></span>Add to cart</button></div>
+		                	<input type="hidden" name="name" value="${row.name}">
+		                	<input type="hidden" name="price" value="${row.price}"> 
+		                	<input type = "hidden" name = "id" value = "${row.id}" >
+							</form>
+						</c:forEach>  
                     </p>
-                    <div align="center"><button type="submit" class="btn btn-primary" id="countnum4" action="ShoppingCartController"><span class="glyphicon glyphicon-shopping-cart"></span>Add to cart</button></div>
                 </div>
-                <!-- WHEN SUBMIT GET THE ID AND NAME THEN IN CONTROLLER GET NAME OF EGG AND BASED ON THAT GET THE IMAGE URL(PUT IN MYSQL) AND DISPLAY IN JSP -->
-            </div>
+                
+         	</div>
         </div>
+              
+     </section>
     
-      <form action="ShoppingCartController" method="get">
-	  	  First name: <input type="text" name="fname"><br>
-		  Last name: <input type="text" name="lname"><br>
-		  <input type="submit" value="Submit">
-	</form>
-    
-    </section>
     
     <section class="Reviews" id="Reviews">
         

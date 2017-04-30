@@ -38,7 +38,8 @@ public class Registration extends HttpServlet {
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// get the user input
-        String name = request.getParameter("name");
+        String firstname = request.getParameter("firstname");
+        String lastname = request.getParameter("lastname");  
         String email = request.getParameter("email");
         String usernameGiven = request.getParameter("username");
         String passwordGiven = request.getParameter("password");
@@ -46,7 +47,8 @@ public class Registration extends HttpServlet {
         
         
         //Boolean variables to validate & display error message
-        boolean validName = name != null && name.trim().length() > 0;
+        boolean validfName = firstname != null && firstname.trim().length() > 0;
+        boolean validlName = lastname != null && lastname.trim().length() > 0;
         boolean validEmail = email != null && email.trim().length() > 0;
         boolean validUserName = usernameGiven != null && usernameGiven.trim().length() > 0;
         boolean validPassword = passwordGiven != null && passwordGiven.trim().length() > 0;
@@ -54,11 +56,11 @@ public class Registration extends HttpServlet {
         
         
         
-        if (validName && validEmail && validUserName && validPassword && validPassword2 && passwordGiven.equals(password2Given)){
+        if (validfName && validEmail && validUserName && validPassword && validPassword2 && passwordGiven.equals(password2Given)){
         
         	
             //Create new user, that matches that of the db requirements. USE PREPARED STATEMENTS
-            SigninUser UserEntry = new SigninUser( idSeed++, name, email, usernameGiven, passwordGiven, password2Given, password2Given);
+            SigninUser UserEntry = new SigninUser( idSeed++, firstname, lastname, usernameGiven, email, passwordGiven, "Customer");
             
             //add to database the users
             Connection c = null; // set connection to db as null
@@ -72,11 +74,14 @@ public class Registration extends HttpServlet {
     			
     			
     			//Create prepared statement to prevent sql injections
-    			String query = "INSERT INTO users (username, email, password) values(?,?,?)";
+    			String query = "INSERT INTO users (first_name, last_name, username, email, password, status) values(?,?,?,?,?,?)";
     			PreparedStatement statement = c.prepareStatement(query);
-    			statement.setString(1, usernameGiven);
-    			statement.setString(2, email);
-    			statement.setString(3, passwordGiven);
+    			statement.setString(1, firstname);
+    			statement.setString(2, lastname);
+    			statement.setString(3, usernameGiven);
+    			statement.setString(4, email);
+    			statement.setString(5, passwordGiven);
+    			statement.setString(6, "Customer");
     			statement.executeUpdate();
     			
     			
@@ -112,8 +117,10 @@ public class Registration extends HttpServlet {
         }
         
         else{
-            if (!validName)
-                request.setAttribute("nameError", "Please enter your name");
+            if (!validfName)
+                request.setAttribute("fnameError", "Please enter your first name");
+            if (!validlName)
+                request.setAttribute("lnameError", "Please enter your last name");
             if(!validEmail)
                 request.setAttribute("emailError", "Please enter a email");
             if(!validUserName)

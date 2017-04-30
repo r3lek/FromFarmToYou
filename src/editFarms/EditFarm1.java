@@ -59,6 +59,25 @@ public class EditFarm1 extends HttpServlet {
 		String arranging4_text = request.getParameter("arranging4_text");
 		
 		
+		//Egg param
+        String egg1Name = request.getParameter("egg1Name");
+        String egg2Name = request.getParameter("egg2Name");
+        String egg3Name = request.getParameter("egg3Name");
+        String egg4Name = request.getParameter("egg4Name");
+        String egg1Description = request.getParameter("egg1Description");
+        String egg2Description = request.getParameter("egg2Description");
+        String egg3Description = request.getParameter("egg3Description");
+        String egg4Description = request.getParameter("egg4Description");
+        int egg1Quantity = Integer.parseInt(request.getParameter("egg1Quantity"));
+        int egg2Quantity = Integer.parseInt(request.getParameter("egg2Quantity"));
+        int egg3Quantity = Integer.parseInt(request.getParameter("egg3Quantity"));
+        int egg4Quantity = Integer.parseInt(request.getParameter("egg4Quantity"));
+        double egg1Price = Double.parseDouble(request.getParameter("egg1Price"));
+        double egg2Price = Double.parseDouble(request.getParameter("egg2Price"));
+        double egg3Price = Double.parseDouble(request.getParameter("egg3Price"));
+        double egg4Price = Double.parseDouble(request.getParameter("egg4Price"));
+        
+ 
 		
 		
         Connection c = null;
@@ -67,8 +86,9 @@ public class EditFarm1 extends HttpServlet {
             String url = "jdbc:mysql://localhost/cs3220stu63";
             String username = "cs3220stu63";
             String password = "abcd";
-
-            String sql = "UPDATE farmerInfo SET h1_header = ?, service_texT = ?, first_h4 = ?, arranging_text = ?, second_h4 = ?, arranging2_text = ?, third_h4 = ?, arranging3_text = ?, fourth_h4 = ?, arranging4_text = ?";
+            
+            //Update the farms services
+            String sql = "UPDATE farmerInfo SET h1_header = ?, service_texT = ?, first_h4 = ?, arranging_text = ?, second_h4 = ?, arranging2_text = ?, third_h4 = ?, arranging3_text = ?, fourth_h4 = ?, arranging4_text = ? WHERE id = 1";
 
             c = DriverManager.getConnection( url, username, password );
             PreparedStatement pstmt = c.prepareStatement(sql);
@@ -84,6 +104,20 @@ public class EditFarm1 extends HttpServlet {
             pstmt.setString(10, arranging4_text);
             pstmt.executeUpdate();
             
+            //Update all infor of egg 1
+            String updateEggs = "UPDATE inventory SET name = ?, description = ?, price = ?, quantity = ? WHERE id = 1";
+            pstmt = c.prepareStatement(updateEggs);
+            pstmt.setString(1, egg1Name);
+            pstmt.setString(2, egg1Description);
+            pstmt.setFloat(3, (float) egg1Price);
+            pstmt.setInt(4, egg1Quantity);
+            pstmt.executeUpdate();
+            
+            		
+            		
+            
+            
+             
             /*ResultSet rs = pstmt.executeQuery();
 
             if( rs.next() != false ){
@@ -107,7 +141,7 @@ public class EditFarm1 extends HttpServlet {
             }
         }
 		
-		
+		//redirect here 
 		
 	}
 

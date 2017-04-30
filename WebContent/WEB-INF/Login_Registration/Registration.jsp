@@ -22,7 +22,17 @@
 							</c:if>
 			
 							<span class="glyphicon glyphicon-user"> 
-								Name: <br> <input type="text" name="name"/>
+								FirstName: <br> <input type="text" name="firstname"/>
+							</span>
+							
+						</div><br>
+								<div align="center">
+							<c:if test="${not empty nameError}">
+								<p style="color: red;">${nameError}</p>
+							</c:if>
+			
+							<span class="glyphicon glyphicon-user"> 
+								LastName: <br> <input type="text" name="lastname"/>
 							</span>
 						</div><br>
 						
