@@ -62,9 +62,9 @@ public class ReviewModule extends HttpServlet {
 		try
 		{
 
-			String url = "jdbc:mysql://localhost:3306/cs3220stu76";
-			String username = "cs3220stu76";
-			String password = "abcd";
+			String url = "jdbc:mysql://localhost:3306/cs3220stu70";
+			String username = "cs3220stu70";
+			String password = "OINbr*Vc";
 
 			
             String sql = "insert into Review (name, farm, comment, date) values(?,?,?,?);";

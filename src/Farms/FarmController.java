@@ -20,8 +20,8 @@ public class FarmController extends HttpServlet {
     
     
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-<<<<<<< HEAD
-=======
+
+
         Connection c = null; // set connection to db as null
 
 		try {
@@ -59,7 +59,7 @@ public class FarmController extends HttpServlet {
 			}
 		}
 		
->>>>>>> ffbc276484ff8199e13aedfa3240550d6ae16042
+
 		
 		System.out.println("Coming back from the cart " + request.getSession().getAttribute("previousURL"));		
 		request.getRequestDispatcher("/WEB-INF/Farms/Farm1.jsp").forward(request, response);

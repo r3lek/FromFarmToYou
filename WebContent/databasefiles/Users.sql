@@ -1,4 +1,4 @@
-use cs3220stu76;
+use cs3220stu70;
 
 
 SET time_zone = "+00:00";

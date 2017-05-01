@@ -67,9 +67,9 @@ public class Registration extends HttpServlet {
 
     		try {
 
-    			String url = "jdbc:mysql://localhost:3306/cs3220stu76";
-    			String username = "cs3220stu76";
-    			String password = "abcd";
+    			String url = "jdbc:mysql://localhost:3306/cs3220stu70";
+    			String username = "cs3220stu70";
+    			String password = "OINbr*Vc";
     			c = DriverManager.getConnection(url, username, password);
     			
     			

@@ -1,4 +1,4 @@
-use cs3220stu76;
+use cs3220stu70;
 
 drop table if exists ContactUs;
 
