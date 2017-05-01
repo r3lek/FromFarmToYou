@@ -111,6 +111,15 @@
                     <b class="caret"></b></a> <!-- ADD JSP HERE THAT REFLECTS USER STATUS AND/OR NAME -->
                     <ul class="dropdown-menu">
                         <li><a href="../chickenPages/Profile"><span class="glyphicon glyphicon-user"></span>Profile</a></li>
+                        
+                        <c:forEach items="${UserList}" var="entry">
+						  <tr>
+						    
+							<li><a href="../Farms/OrderHistory"><span class="glyphicon glyphicon-time"></span>Order History</a></li>
+						    
+						  </tr>
+						</c:forEach>
+                        
                         <li class="divider"></li>
                         <li><a href="../chickenPages/Logout"><span class="glyphicon glyphicon-off"></span>Logout</a></li>
                     </ul>
@@ -214,10 +223,7 @@
 </div>   
 </div>
 
-<<<<<<< HEAD
-=======
 
->>>>>>> 98fd36533a9a518cfbd1b0ac3f2126212901b527
 <section id="sec">
  <div class="container">
  	<div class="row">
@@ -256,11 +262,8 @@ Offering overnight shipping we guarantee that the eggs will be fresh upon arriva
 	
 	</div>
 </div>
-<<<<<<< HEAD
-</section>
-=======
-</section>	
->>>>>>> 98fd36533a9a518cfbd1b0ac3f2126212901b527
+
+
 
 </body>
 </html>

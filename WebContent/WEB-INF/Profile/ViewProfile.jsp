@@ -88,6 +88,14 @@
 		                    <b class="caret"></b></a> <!-- ADD JSP HERE THAT REFLECTS USER STATUS AND/OR NAME -->
 		                    <ul class="dropdown-menu">
 		                        <li><a href="../chickenPages/Profile"><span class="glyphicon glyphicon-user"></span>Profile</a></li>
+		                        
+		                        
+		                        <c:forEach items="${UserList}" var="entry">
+						  			<tr>
+									<li><a href="../Farms/OrderHistory"><span class="glyphicon glyphicon-time"></span>Order History</a></li>
+								    </tr>
+								</c:forEach>
+		                        
 		                        <li class="divider"></li>
 		                        <li><a href="../chickenPages/Logout"><span class="glyphicon glyphicon-off"></span>Logout</a></li>
 		                    </ul>
