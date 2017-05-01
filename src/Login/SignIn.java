@@ -70,8 +70,8 @@ public class SignIn extends HttpServlet {
 
 		try {
 
-			String url = "jdbc:mysql://localhost:3306/cs3220stu76";
-			String username = "cs3220stu76";
+			String url = "jdbc:mysql://localhost:3306/cs3220stu63";
+			String username = "cs3220stu63";
 			String password = "abcd";
 			c = DriverManager.getConnection(url, username, password);
 			Statement statement = c.createStatement();
@@ -83,9 +83,12 @@ public class SignIn extends HttpServlet {
 				if(rs.getString("username").equals(usernameGiven) && rs.getString("password").equals(passwordGiven)){
 					SigninUser signedUser = new SigninUser(rs.getInt("id"), rs.getString("first_name"), rs.getString("last_name"), rs.getString("username"), rs.getString("email"), rs.getString("password"), rs.getString("status"));
 					user.add(signedUser);
-				
+					
+					if(rs.getInt("farm_num") > 0){
+						session.setAttribute("farmNum", rs.getInt("farm_num"));
+					}
 					session.setAttribute("UserList", user);
-			
+					
 					//redirect to other servlet
 					response.sendRedirect("../ChickenPages/index");
 					
