@@ -141,5 +141,19 @@ li:hover{
 }  
 
 #sec{
+<<<<<<< HEAD
+    background-image:  url(http://image.noelshack.com/fichiers/2015/48/1448773730-upfeathers.png) !important;
+}
+
+
+
+
+
+
+
+
+
+=======
     background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(http://image.noelshack.com/fichiers/2015/48/1448773730-upfeathers.png) !important;
 }
+>>>>>>> 98fd36533a9a518cfbd1b0ac3f2126212901b527

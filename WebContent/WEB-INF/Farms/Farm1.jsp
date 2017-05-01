@@ -56,9 +56,15 @@
         <h3 class="text-center">Our Service</h3>
         
         <p class="ServiceText">
+<<<<<<< HEAD
             <c:forEach var="row" items="${result.rows}">
 				${row.service_text}
 			</c:forEach>  
+=======
+            Since 1994, we've been a local farm. We expanded our farm by buying multiple acres of land where we have sought to expand our animal inventory and start selling to local communities.
+        	We guarantee the freshness of our products as they are grown locally. We enjoy satisfying our customers with only the best farm grown hens that are caged free and with the best
+        	nutrition. Order your eggs online today and enjoy the best tasting non-GMO eggs out there! 
+>>>>>>> ffbc276484ff8199e13aedfa3240550d6ae16042
         </p>
         
         <!-- The "<div class="col-md-3">" contains each individual section Our Service column -->

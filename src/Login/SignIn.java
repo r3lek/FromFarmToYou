@@ -70,8 +70,8 @@ public class SignIn extends HttpServlet {
 
 		try {
 
-			String url = "jdbc:mysql://localhost:3306/cs3220stu63";
-			String username = "cs3220stu63";
+			String url = "jdbc:mysql://localhost:3306/cs3220stu76";
+			String username = "cs3220stu76";
 			String password = "abcd";
 			c = DriverManager.getConnection(url, username, password);
 			Statement statement = c.createStatement();
