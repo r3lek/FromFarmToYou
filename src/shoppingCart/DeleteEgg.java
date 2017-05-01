@@ -34,7 +34,7 @@ public class DeleteEgg extends HttpServlet {
 		for (Products products : inCart) { // Traverse arraylist and remove obj from arraylist
 			if(products.getId() == id){
 				inCart.remove(products);
-				session.setAttribute("totalSum", totalSum - products.getTotalPrice());
+				session.setAttribute("totalSum", Math.round((totalSum - products.getTotalPrice()) * 100.0) / 100.0);
 				break;
 			}
 			session.setAttribute("productList", inCart);

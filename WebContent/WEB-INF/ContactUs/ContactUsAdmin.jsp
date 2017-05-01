@@ -24,8 +24,8 @@
 
 	
 	<sql:setDataSource var="UserContactUs" driver="com.mysql.jdbc.Driver"
-     url="jdbc:mysql://localhost/cs3220stu76"
-     user="cs3220stu76"  password="abcd"/>
+     url="jdbc:mysql://localhost/cs3220stu63"
+     user="cs3220stu63"  password="abcd"/>
 
 	<sql:query dataSource="${UserContactUs}" var="result">
 	SELECT * from ContactUs;

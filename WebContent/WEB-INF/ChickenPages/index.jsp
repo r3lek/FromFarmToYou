@@ -180,22 +180,7 @@
             <p>After the battling and triumphing the recession, this family owned farm has grown together. This farm treats its chickens as part of the family. Check out the hens here, and maybe the owners!  <a class="label label-primary" href="InsertURLHERE" target="_blank">Farm3</a></p>
           </div>
         </div><!-- End Item -->
-        
-        <div class="item">
-          <img src="http://placehold.it/760x400/999999/cccccc">
-           <div class="carousel-caption">
-            <h4><a href="#">Farm 4 (Different Farm)</a></h4>
-            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat. <a class="label label-primary" href="DELETEURLHERE" target="_blank">NOT NEEDED</a></p>
-          </div>
-        </div><!-- End Item -->
 
-        <div class="item">
-          <img src="http://placehold.it/760x400/dddddd/333333">
-           <div class="carousel-caption">
-            <h4><a href="#">Farm 5 (More Farms)</a></h4>
-            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat. <a class="label label-primary" href="DELETEURLHERE" target="_blank">NOT NEEDED</a></p>
-          </div>
-        </div><!-- End Item -->
                 
       </div><!-- End Carousel Inner -->
 
@@ -204,8 +189,7 @@
       <li data-target="#myCarousel" data-slide-to="0" class="list-group-item"><h4>Farm 1 (Dixon Farm)</h4></li>
       <li data-target="#myCarousel" data-slide-to="1" class="list-group-item"><h4>Farm 2 (Generic Farm)</h4></li>
       <li data-target="#myCarousel" data-slide-to="2" class="list-group-item"><h4>Farm 3 (Other Farm)</h4></li>
-      <li data-target="#myCarousel" data-slide-to="3" class="list-group-item"><h4>Farm 4 (Different Farm)</h4></li>
-      <li data-target="#myCarousel" data-slide-to="4" class="list-group-item"><h4>Farm 5 (More Farms)</h4></li>
+    
     </ul>
 
       <!-- Controls -->
