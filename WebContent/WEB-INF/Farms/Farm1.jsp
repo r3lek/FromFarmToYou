@@ -158,7 +158,7 @@
                     <p class="text-center"> 
                     	<c:forEach var="row" items="${egg1.rows}">
 							${row.description}<br>
-							<span class="label label-default">${row.price}</span>
+							<h4><span class="label label-default">${row.price}</span></h4>
 							
 							<form action="ShoppingCartController" method="POST">
 		                    <div align="center">
@@ -187,7 +187,7 @@
                     <p class="text-center"> 
                     	<c:forEach var="row" items="${egg2.rows}">
 							${row.description}<br>
-							<span class="label label-default">${row.price}</span>
+							<h4><span class="label label-default">${row.price}</span></h4>
 							
 							<form action="ShoppingCartController" method="POST">
 		                    <div align="center">
@@ -215,7 +215,7 @@
                     <p class="text-center"> 
                     	<c:forEach var="row" items="${egg3.rows}">
 							${row.description}<br>
-							<span class="label label-default">${row.price}</span>
+							<h4><span class="label label-default">${row.price}</span></h4>
 							
 							<form action="ShoppingCartController" method="POST">
 		                    <div align="center">
@@ -246,7 +246,7 @@
                     <p class="text-center"> 
                     	<c:forEach var="row" items="${egg4.rows}">
 							${row.description}<br>
-							<span class="label label-default">${row.price}</span>
+							<h4><span class="label label-default">${row.price}</span></h4>
 							
 							<form action="ShoppingCartController" method="POST">
 		                    <div align="center">

@@ -87,7 +87,7 @@ public class ShoppingCartController extends HttpServlet {
 				for(Products p: inCart){
 					totalSum += p.getTotalPrice(); //This gives total price of everything in the list. 	
 				}
-				session.setAttribute("totalSum", totalSum);
+				session.setAttribute("totalSum", Math.round(totalSum * 100.0) / 100.0);
 			}
 			else if(isInList(inCart, name, price, quantity, id) == false){ //Product selected not inside the arraylist, so create new prod obj 
 				Products product = new Products();
@@ -105,7 +105,7 @@ public class ShoppingCartController extends HttpServlet {
 				for(Products p: inCart){
 					totalSum += p.getTotalPrice(); //This gives total price of everything in the list. 	
 				}
-				session.setAttribute("totalSum", totalSum);
+				session.setAttribute("totalSum", Math.round(totalSum * 100.0) / 100.0);
 				
 			}
 		}

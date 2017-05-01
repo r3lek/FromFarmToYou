@@ -92,17 +92,14 @@
                         <td>   </td>
                         <td>   </td>
                         <td><h3>Total</h3></td>
-                        <td class="text-right"><h3><strong>Total Price</strong></h3></td>
+                        <td class="text-right"><h3><strong>${sessionScope.totalSum + 5 }</strong></h3></td>
                     </tr>
                     
                   
                     
                     <tr>
                         <td> 
-                        
-                    <c:forEach items="${productList}" var="entry">
-                    <strong>"This is here "  ${entry.price}</strong>
-                    </c:forEach> 
+
                      
                         </td>
                         <td>   </td>

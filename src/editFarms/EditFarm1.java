@@ -27,6 +27,7 @@ public class EditFarm1 extends HttpServlet {
         // TODO Auto-generated constructor stub
     }
 
+    
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
@@ -34,7 +35,7 @@ public class EditFarm1 extends HttpServlet {
 		request.getRequestDispatcher("/WEB-INF/EditFarms/EditFarm1.jsp").forward(request, response);
 		
 		
-		//Check if the farmer is logged in.
+		//Check if the farmer is logged in in the view of Farm1.jsp
 		
 	
 		
@@ -104,20 +105,44 @@ public class EditFarm1 extends HttpServlet {
             pstmt.setString(10, arranging4_text);
             pstmt.executeUpdate();
             
-            //Update all infor of egg 1
-            String updateEggs = "UPDATE inventory SET name = ?, description = ?, price = ?, quantity = ? WHERE id = 1";
-            pstmt = c.prepareStatement(updateEggs);
+            //Update all egg info
+            String update1Eggs = "UPDATE inventory SET name = ?, description = ?, price = ?, quantity = ? WHERE id = 1";
+            String update2Eggs = "UPDATE inventory SET name = ?, description = ?, price = ?, quantity = ? WHERE id = 2";
+            String update3Eggs = "UPDATE inventory SET name = ?, description = ?, price = ?, quantity = ? WHERE id = 3";
+            String update4Eggs = "UPDATE inventory SET name = ?, description = ?, price = ?, quantity = ? WHERE id = 4";
+            
+            //Statement for egg 1. Update it
+            pstmt = c.prepareStatement(update1Eggs);
             pstmt.setString(1, egg1Name);
             pstmt.setString(2, egg1Description);
             pstmt.setFloat(3, (float) egg1Price);
             pstmt.setInt(4, egg1Quantity);
             pstmt.executeUpdate();
             
-            		
-            		
+            //For egg 2 
+            pstmt = c.prepareStatement(update2Eggs);
+            pstmt.setString(1, egg2Name);
+            pstmt.setString(2, egg2Description);
+            pstmt.setFloat(3, (float) egg2Price);
+            pstmt.setInt(4, egg2Quantity);
+            pstmt.executeUpdate();
             
+            //For egg 3 
+            pstmt = c.prepareStatement(update3Eggs);
+            pstmt.setString(1, egg3Name);
+            pstmt.setString(2, egg3Description);
+            pstmt.setFloat(3, (float) egg3Price);
+            pstmt.setInt(4, egg3Quantity);
+            pstmt.executeUpdate();
             
-             
+            //For egg 4 
+            pstmt = c.prepareStatement(update4Eggs);
+            pstmt.setString(1, egg4Name);
+            pstmt.setString(2, egg4Description);
+            pstmt.setFloat(3, (float) egg4Price);
+            pstmt.setInt(4, egg4Quantity);
+            pstmt.executeUpdate();
+                 
             /*ResultSet rs = pstmt.executeQuery();
 
             if( rs.next() != false ){
@@ -142,7 +167,11 @@ public class EditFarm1 extends HttpServlet {
         }
 		
 		//redirect here 
-		
+		response.sendRedirect("FarmController");
+        
+        
+        
+        
 	}
 
 }

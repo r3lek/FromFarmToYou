@@ -1,4 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql" %>   
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -12,7 +14,11 @@
 </head>
 
 <body>
-    
+    <sql:setDataSource var="farmedit" driver="com.mysql.jdbc.Driver" url="jdbc:mysql://localhost/cs3220stu63" user="cs3220stu63"  password="abcd"/>
+	<sql:query dataSource="${farmedit}" var="result">SELECT * from farmerInfo WHERE id = 2; </sql:query>
+	<sql:query dataSource="${farmedit}" var="egg1">SELECT * from inventory WHERE id = 5; </sql:query>
+	<sql:query dataSource="${farmedit}" var="egg2">SELECT * from inventory WHERE id = 6; </sql:query>
+	<sql:query dataSource="${farmedit}" var="egg3">SELECT * from inventory WHERE id = 7; </sql:query>
     
     
     <header id="cartNum">   
@@ -34,7 +40,12 @@
         
         <!--Displays Page Welcome-->
         <div class="Header">
-            <h1>Welcome to,<br>The Hesperia Family Farm</h1>
+            <h1>
+           <c:forEach var="row" items="${result.rows}">
+					${row.h1_header}
+			</c:forEach>  
+            
+            </h1>
         </div>
     </header>
     
@@ -44,10 +55,9 @@
         <h3 class="text-center">Our Service</h3>
         
         <p class="ServiceText">
-            We are family farm dedicated to providing the best eggs around! Like I said, we are family farm that has been around for generations
-            and we know what our customers love! We stay committed to delivering the best quality eggs and delivering the freshness straight to your door.
-            We care about our live stock, just as much as we care about our customers and their satisfaction. Since 1887 we have dedicated the best services
-            and we plan on expanding our egg shipments to other locals in different areas!
+            <c:forEach var="row" items="${result.rows}">
+				${row.service_text}
+			</c:forEach> 
         </p>
         
         <!-- The "<div class="col-md-3">" contains each individual section Our Service column -->
@@ -56,40 +66,58 @@
                 
                 <div class="col-md-3">
                     <span class="glyphicon glyphicon-tree-conifer"></span>
-                    <h4>Natural Environment</h4>
+                    <h4>
+                    <c:forEach var="row" items="${result.rows}">
+							${row.first_h4}
+					</c:forEach>
+                    </h4>
                     <p class="arranging">
-                         Our farm is located in a natural environment that takes great care of our live stock. By this we mean that our land has provided
-                         some of the most beneficial environment by giving our animals water and some of the best food source.
+                        <c:forEach var="row" items="${result.rows}">
+							${row.arranging_text}
+						</c:forEach>  
                     </p>
                 </div>
                 
                 <div class="col-md-3">
                     <span class="glyphicon glyphicon-calendar"></span>
-                    <br><h4>Open 24/7</h4>
+                    <br>
+                    <h4>
+                    	<c:forEach var="row" items="${result.rows}">
+						${row.second_h4}
+						</c:forEach> 
+                    </h4>
                     <p class="arranging">
-						That's right! We are open 24/7 so that means you can order your eggs any time of the day, any day of the week, in any month.
-						We want all our customers to enjoy all the eggs that they want at any given time, so as long as transportation services are 
-						available, then the egg will be delivered to you! 
+						 <c:forEach var="row" items="${result.rows}">
+							${row.arranging2_text}<br>
+						</c:forEach> 
                     </p>
                 </div>
                 
                 <div class="col-md-3">
                     <span class="glyphicon glyphicon-time"></span>
-                    <h4>Fast Delivery</h4>
+                    <h4>
+                    	<c:forEach var="row" items="${result.rows}">
+						${row.third_h4}
+						</c:forEach> 
+                    </h4>
                     <p class="arranging">
-                         Like many other farmers, we want to ensure our customers get their eggs as soon as possible, so that they can enjoy
-                         the freshness of our eggs. There are many things we want our customers to enjoy, so we want them to enjoy the eggs as
-                         fast as possible!
+                         <c:forEach var="row" items="${result.rows}">
+							${row.arranging3_text}<br>
+						</c:forEach>  
                     </p>
                 </div>
                 
                 <div class="col-md-3">
                     <span class="glyphicon glyphicon-star"></span>
-                    <h4>Satisfied Customers</h4>
+                    <h4>
+                    	<c:forEach var="row" items="${result.rows}">
+						${row.fourth_h4}
+						</c:forEach> 
+                    </h4>
                     <p class="arranging">
-                         We enjoy seeing our farmers satisfied, that's why we deliver the best experience for our user, so that they
-                         can return and buy more of our eggs. Don't believe us? Scroll down to the bottom of the page to see what our
-                         customers are saying!
+                         <c:forEach var="row" items="${result.rows}">
+							${row.arranging4_text}<br>
+						</c:forEach> 
                     </p>
                 </div>
             </div>
@@ -116,29 +144,93 @@
             <div class="row">
                 
                 <!-- Each indivudual product picture and product info and product name -->
+                <!-- IMG FOR EGG 1 <img src="../ChickenPages/FarmersTemplate/img/Omega2.jpg" align="center"> -->
                 <div class="col-md-4">
                     <img src="../ChickenPages/FarmersTemplate/img/BrownEgg2.jpg" align="center">
-                    <h4 class="text-center">Brown Eggs</h4>
-                    <p class="text-center"> Our brown eggs are the most favored amongst our customers and recommend them to you!
+                    <h4 class="text-center">
+                    	<c:forEach var="row" items="${egg1.rows}">
+							${row.name} <br>
+						</c:forEach>
+                    </h4>
+                    <p class="text-center">
+                    	<c:forEach var="row" items="${egg1.rows}">
+							${row.description}<br>
+							<h4><span class="label label-default">${row.price}</span></h4>
+							
+							<form action="ShoppingCartController" method="POST">
+		                    <div align="center">
+		                    <input type="number" name="quantity" min="0" max="${row.quantity}" value = "0">
+		                    <button type="submit" class="btn btn-primary" id="countnum1" formaction="ShoppingCartController"><span class="glyphicon glyphicon-shopping-cart"></span>Add to cart</button></div>
+		                	<input type="hidden" name="name" value="${row.name}">
+		                	<input type="hidden" name="price" value="${row.price}"> 
+		                	<input type = "hidden" name = "id" value = "${row.id}" >
+		                	
+							</form>
+						</c:forEach>  
                     </p>
-                    <div align="center"><button type="button" class="btn btn-primary" id="countnum1"><span class="glyphicon glyphicon-shopping-cart"></span>Add to cart</button></div>
                 </div>
                 
+                
+                
+                
+                <!-- Egg 2 -->
                 <div class="col-md-4">
                     <img src="../ChickenPages/FarmersTemplate/img/WhiteEgg2.jpeg" align="center">
-                    <h4 class="text-center">White Eggs</h4>The white eggs has been our original from the start of this farm and our hens know it.
-                    <p class="text-center">  
+                    <h4 class="text-center">
+                    	<c:forEach var="row" items="${egg2.rows}">
+							${row.name} <br>
+						</c:forEach>
+                    </h4>
+                    <p class="text-center">
+                    	<c:forEach var="row" items="${egg2.rows}">
+							${row.description}<br>
+							<h4><span class="label label-default">${row.price}</span></h4>
+							
+							<form action="ShoppingCartController" method="POST">
+		                    <div align="center">
+		                    <input type="number" name="quantity" min="0" max="${row.quantity}" value = "0">
+		                    <button type="submit" class="btn btn-primary" id="countnum2" formaction="ShoppingCartController"><span class="glyphicon glyphicon-shopping-cart"></span>Add to cart</button></div>
+		                	<input type="hidden" name="name" value="${row.name}">
+		                	<input type="hidden" name="price" value="${row.price}"> 
+		                	<input type = "hidden" name = "id" value = "${row.id}" >
+		                	
+							</form>
+						</c:forEach>  
                     </p>
-                    <div align="center"><button type="button" class="btn btn-primary" id="countnum2"><span class="glyphicon glyphicon-shopping-cart"></span>Add to cart</button></div>
                 </div>
                 
+                
+                 <!-- Egg 3 -->
                 <div class="col-md-4">
                     <img src="../ChickenPages/FarmersTemplate/img/Omega2.jpg" align="center">
-                    <h4 class="text-center">Omega Eggs</h4>
-                    <p class="text-center"> Amongst the most nutritionist eggs that we have and contain 39% less Arachidonic Acid.
+                    <h4 class="text-center">
+                    	<c:forEach var="row" items="${egg3.rows}">
+							${row.name} <br>
+						</c:forEach>
+                    </h4>
+                    <p class="text-center">
+                    	<c:forEach var="row" items="${egg3.rows}">
+							${row.description}<br>
+							<h4><span class="label label-default">${row.price}</span></h4>
+							
+							<form action="ShoppingCartController" method="POST">
+		                    <div align="center">
+		                    <input type="number" name="quantity" min="0" max="${row.quantity}" value = "0">
+		                    <button type="submit" class="btn btn-primary" id="countnum3" formaction="ShoppingCartController"><span class="glyphicon glyphicon-shopping-cart"></span>Add to cart</button></div>
+		                	<input type="hidden" name="name" value="${row.name}">
+		                	<input type="hidden" name="price" value="${row.price}"> 
+		                	<input type = "hidden" name = "id" value = "${row.id}" >
+		                	
+							</form>
+						</c:forEach>  
                     </p>
-                    <div align="center"><button type="button" class="btn btn-primary" id="countnum3"><span class="glyphicon glyphicon-shopping-cart"></span>Add to cart</button></div>
                 </div>
+                
+                
+                
+                
+                
+                
                 
             </div>
         </div>

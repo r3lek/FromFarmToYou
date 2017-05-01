@@ -33,6 +33,7 @@ public class SignIn extends HttpServlet {
 		
 	    getServletContext().setAttribute( "UserList", ListOfUsers);
 	    */
+		
 	    //Connect to database
 	    try {
 			Class.forName("com.mysql.jdbc.Driver");
@@ -87,7 +88,13 @@ public class SignIn extends HttpServlet {
 			
 					//redirect to other servlet
 					response.sendRedirect("../ChickenPages/index");
+					
+					if (c != null) {
+						c.close();
+					}
+					
 					return;	
+					
 				}
 				
 
