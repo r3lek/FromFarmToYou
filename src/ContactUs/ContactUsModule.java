@@ -76,7 +76,7 @@ public class ContactUsModule extends HttpServlet {
 		try
 		{
 
-			String url = "jdbc:mysql://localhost:3306/cs3220stu70";
+			String url = "jdbc:mysql://cs3.calstatela.edu/cs3220stu70";
 			String username = "cs3220stu70";
 			String password = "OINbr*Vc";
 			

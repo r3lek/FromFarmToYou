@@ -5,7 +5,7 @@
     <head> 
         <link rel="stylesheet" href="https://bootswatch.com/paper/bootstrap.min.css">
         <link href="RegisterCss.css" rel="stylesheet"/>
-<<<<<<< HEAD
+
 
 
 		<title>Registration</title>
@@ -97,7 +97,7 @@
 		</div>
 
 		 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-=======
+
         <title>Registration</title>
     </head>
     <body>
@@ -184,7 +184,7 @@
             </div>
         </div>
          <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
->>>>>>> ffbc276484ff8199e13aedfa3240550d6ae16042
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
