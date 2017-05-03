@@ -24,8 +24,8 @@
 
 
 	<sql:setDataSource var="UserReview" driver="com.mysql.jdbc.Driver"
-     url="jdbc:mysql://localhost/cs3220stu63"
-     user="cs3220stu63"  password="abcd"/>
+     url="jdbc:mysql://cs3.calstatela.edu/cs3220stu63"
+     user="cs3220stu63"  password="5y2rJd#W"/>
 
 	<sql:query dataSource="${UserReview}" var="result">
 	SELECT * from Review;

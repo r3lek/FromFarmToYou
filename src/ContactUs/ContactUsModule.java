@@ -79,6 +79,7 @@ public class ContactUsModule extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		String names = request.getParameter("name");
+		System.out.println("For name i got " + names );
 		String email = request.getParameter("email");
 		String comment = request.getParameter("comment");
 		String itemUploaded = "";	//Eventually becomes, names of files uploaded
@@ -86,24 +87,21 @@ public class ContactUsModule extends HttpServlet {
 		java.util.Date date = new java.util.Date();
 		java.sql.Date sqlDate = new Date(date.getYear(), date.getMonth(), date.getDate());
 		
+		//Fix error. Cannot get parameters if file is uploaded, so will leave as so for demo
+		//ServletFileUpload sf = new ServletFileUpload(new DiskFileItemFactory());
 		
-		ServletFileUpload sf = new ServletFileUpload(new DiskFileItemFactory());
-		
-		List<FileItem> multifiles;
-		
-
-
-		
+		//List<FileItem> multifiles;
 	
+		
 		Connection c = null;
 		try
 		{
 
-			String url = "jdbc:mysql://localhost:3306/cs3220stu63";
-			String username = "cs3220stu63";
-			String password = "abcd";
+            String url = "jdbc:mysql://cs3.calstatela.edu/cs3220stu63";
+            String username = "cs3220stu63";
+            String password = "5y2rJd#W";
 			
-            String sql = "insert into ContactUs (name, email, comment, date, items) values(?,?,?,?,?);";
+            String sql = "insert into ContactUs (name, email, comment, date) values(?,?,?,?);";
 
             c = DriverManager.getConnection( url, username, password);
             PreparedStatement pstmt = c.prepareStatement(sql);
@@ -113,7 +111,7 @@ public class ContactUsModule extends HttpServlet {
 			pstmt.setString(2, email);
 			pstmt.setString(3, comment);
 			pstmt.setDate(4, sqlDate);
-			pstmt.setString(5, itemUploaded);
+		//	pstmt.setString(5, itemUploaded);
 			pstmt.executeUpdate();
 		}
 		

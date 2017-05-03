@@ -91,11 +91,9 @@
                     class="glyphicon glyphicon-cog"></span>Sign Up
                 </a>
                     <ul class="dropdown-menu">
-                        <li><a href="../Login/Registration"><!--  <span class="label label-warning">4:00 AM</span> -->Register Now!</a></li>
-                        <li><a href="../Login/Signin"><!--  <span class="label label-warning">4:30 AM</span> --> Login</a></li>
-                        <!--  <li><a href="#"><span class="label label-warning">5:00 AM</span>Subscriber focused email
-                            design</a></li>
-                        <li class="divider"></li>-->
+                        <li><a href="../Login/Registration">Register Now!</a></li>
+                        <li><a href="../Login/Signin">Login</a></li>
+  
                     </ul>
                 </li>
                 <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span
@@ -136,21 +134,6 @@
                 </li>
                 
                 <li><a href="../Farms/ShoppingCartController"><span class="glyphicon glyphicon-shopping-cart"></span>Cart</a></li>
-               
-               	<!-- How to add a label next to cart. MAY BE USEFUL WHEN IMPLEMENTING CART!!!!!!!!!!!!
-                <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span
-                    class="glyphicon glyphicon-envelope"></span>Inbox <span class="label label-info">32</span>
-                </a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#"><span class="label label-warning">4:00 AM</span>Favourites Snippet</a></li>
-                        <li><a href="#"><span class="label label-warning">4:30 AM</span>Email marketing</a></li>
-                        <li><a href="#"><span class="label label-warning">5:00 AM</span>Subscriber focused email
-                            design</a></li>
-                        <li class="divider"></li>
-                        <li><a href="#" class="text-center">View All</a></li>
-                    </ul>
-                </li>
-                 -->
                 
             </ul>
         </div>
@@ -168,7 +151,8 @@
       <div class="carousel-inner">
       
         <div class="item active">
-          <img src="../images/HomePic.jpg">
+         <div style="height:522px; width: 100%; background-size: contain; background-image: url(../images/HomePic.jpg); background-position: center; background-size: cover;">
+         </div>
            <div class="carousel-caption">
             <h4><a href="../Farms/FarmController">Farm 1 (Dixon Farm)</a></h4>
             <p>This farm has white, brown, and omega eggs. This farm specializes in white eggs. <a class="label label-primary" href="../Farms/FarmController">Farm 1</a></p>
@@ -176,7 +160,8 @@
         </div><!-- End Item -->
 
          <div class="item">
-          <img src="../images/Farm2HomePic1.jpeg">
+          <div style="height:522px; width: 100%; background-size: contain; background-image: url(../images/Farm2HomePic1.jpeg); background-position: center; background-size: cover;">
+         </div>
            <div class="carousel-caption">
             <h4><a href="../Farms/Farm2Controller">Farm 2 (Hesperia Farm)</a></h4>
             <p>A family owned farm, that guarantees the freshness of their eggs. Caring about their livestock and customers, this farm offers a variety of eggs. Check them out here!  <a class="label label-primary" href="../Farms/Farm2Controller" >Farm 2</a></p>

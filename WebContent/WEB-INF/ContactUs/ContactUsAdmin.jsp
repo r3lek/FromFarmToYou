@@ -24,9 +24,9 @@
 
 	
 	<sql:setDataSource var="UserContactUs" driver="com.mysql.jdbc.Driver"
-     url="jdbc:mysql://localhost/cs3220stu63"
-     user="cs3220stu63"  password="abcd"/>
-
+     url="jdbc:mysql://cs3.calstatela.edu/cs3220stu63"
+     user="cs3220stu63"  password="5y2rJd#W"/>
+        
 	<sql:query dataSource="${UserContactUs}" var="result">
 	SELECT * from ContactUs;
 	</sql:query>
@@ -122,21 +122,7 @@
 		                </li>
 		                
 		                <li><a href="../Farms/ShoppingCartController"><span class="glyphicon glyphicon-shopping-cart"></span>Cart</a></li>
-		               
-		               	<!-- How to add a label next to cart. MAY BE USEFUL WHEN IMPLEMENTING CART!!!!!!!!!!!!
-		                <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span
-		                    class="glyphicon glyphicon-envelope"></span>Inbox <span class="label label-info">32</span>
-		                </a>
-		                    <ul class="dropdown-menu">
-		                        <li><a href="#"><span class="label label-warning">4:00 AM</span>Favourites Snippet</a></li>
-		                        <li><a href="#"><span class="label label-warning">4:30 AM</span>Email marketing</a></li>
-		                        <li><a href="#"><span class="label label-warning">5:00 AM</span>Subscriber focused email
-		                            design</a></li>
-		                        <li class="divider"></li>
-		                        <li><a href="#" class="text-center">View All</a></li>
-		                    </ul>
-		                </li>
-		                 -->
+		              
 		                
 		            </ul>
 		        </div>

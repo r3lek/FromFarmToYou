@@ -39,7 +39,7 @@ public class getLabel extends HttpServlet {
 		String farmerText = "<body>"+
 				"<h1 align=center> Show shipping label </h1>"+
 				"<br><br>"+
-				"<center><img style=\"vertical-align: right;\" width=\"100px\" height=\"75px\" src=\"../images/chick.png\"></center>"+
+				"<center><img style=\"vertical-align: right;\" width=\"100px\" height=\"75px\" src=\"http://cs3.calstatela.edu:8080/cs3220stu63/images/chick.png\"></center>"+
 				"<br>"+
 				"<center><table border=\"7\"><thead><tr>"+
 				"<th>To:" + firstName + " " + lastName + "</th></tr></thead>"+
@@ -51,7 +51,7 @@ public class getLabel extends HttpServlet {
 				"<tr><td>Address: 123 Sesame street </td>"+
 				"</tr><tr><td>Los Angeles, CA, 90123</td> "+
 				"</tr><tr><td>United States</td></tr>"+
-				"<tr><td><img style=\"vertical-align: bottom;\" width=\"274px\" height=\"50px\" src=\"../images/barcode.jpg\"></td></tr>"+
+				"<tr><td><img style=\"vertical-align: bottom;\" width=\"274px\" height=\"50px\" src=\"http://cs3.calstatela.edu:8080/cs3220stu63/images/barcode.jpg\"></td></tr>"+
 				"</table></center>"+
 			"</body>";
 					
@@ -70,10 +70,11 @@ public class getLabel extends HttpServlet {
 			request.getSession().setAttribute("email", email);
 			message = "<h2>Thank You For Your purchase </h2>" + firstName +  " " + lastName + "<br>"
 					+ "----------------------------------------------------------------------------<br>"
-					+ "You bought " + totalEggs + " eggs.<br> "
-							+ "For a total of: $"+ totalSum + ". <br> "
+					+ "You bought " + totalEggs + " eggs.<br><br>"
+							+ "For a total of: $"+ totalSum + ". <br><br> "
 									+ "On: " + currdate
-									+"<br>----------------------------------------------------------------------------"
+									+"<br>----------------------------------------------------------------------------<br><br>"
+									+ "<a href = \"http://cs3.calstatela.edu:8080/cs3220stu63/Review/ReviewModule\">Leave a review here! </a>"
 									;
 			
 			SendMail.send(email, "Thank You For Your Purchase! ", message, "farmerSecond@gmail.com", "notAbc123"); //To customer
@@ -99,7 +100,9 @@ public class getLabel extends HttpServlet {
 					+ "You bought " + totalEggs + " eggs.<br> "
 							+ "For a total of: $"+ totalSum + ". <br> "
 									+ "On: " + currdate
-									+"<br>----------------------------------------------------------------------------"
+									+"<br>----------------------------------------------------------------------------<br><br>"
+									+ "<a href = \"http://cs3.calstatela.edu:8080/cs3220stu63/Review/ReviewModule\">Leave a review here! </a>"
+									;
 									;
 			SendMail.send(email, "Thank You For Your Purchase! ", message, "farmerSecond@gmail.com", "notAbc123");
 			SendMail.send("farmerSecond@gmail.com", "Shipping Label for customer", farmerText, "farmerSecond@gmail.com", "notAbc123");

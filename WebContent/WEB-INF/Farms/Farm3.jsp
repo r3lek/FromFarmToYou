@@ -13,8 +13,6 @@
 
 <body>
     
-    
-    
     <header id="cartNum">   
         <div class="nav">
             

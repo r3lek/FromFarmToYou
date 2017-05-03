@@ -35,7 +35,8 @@ public class SendMail{
 	    	Transport transport = mailSession.getTransport("smtp");
 	    	transport.connect("smtp.gmail.com",user, pass);	//This is what what was missing  and causing authentication errors
 	    	transport.sendMessage(mailMessage, mailMessage.getAllRecipients());
-	    	
+	    		
+	    	transport.close(); //end connection
     	
     	} catch(MessagingException e){
     		//Logger.getLogger(MailSenderBean.class.getName()).log(Level.SEVERE, null, e);
