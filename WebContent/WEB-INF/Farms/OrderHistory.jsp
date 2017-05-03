@@ -25,7 +25,7 @@
 </head>
 <body>
 	<sql:setDataSource var="history" driver="com.mysql.jdbc.Driver"
-		url="jdbc:mysql://localhost/cs3220stu63" user="cs3220stu63"
+		url="jdbc:mysql://localhost/cs3220stu76" user="cs3220stu76"
 		password="abcd" />
 	<sql:query dataSource="${history}" var="result">SELECT * FROM orderhistory WHERE first_name = "${fname}"  AND last_name = "${lname}";</sql:query>
 

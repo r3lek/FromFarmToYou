@@ -21,8 +21,8 @@
 
 <body>
     <sql:setDataSource var="farmedit" driver="com.mysql.jdbc.Driver"
-     url="jdbc:mysql://localhost/cs3220stu63"
-     user="cs3220stu63"  password="abcd"/>
+     url="jdbc:mysql://localhost/cs3220stu76"
+     user="cs3220stu76"  password="abcd"/>
 	
 	<sql:query dataSource="${farmedit}" var="result">SELECT * from farmerInfo WHERE id = 1; </sql:query>
 	<sql:query dataSource="${farmedit}" var="egg1">SELECT * from inventory WHERE id = 1; </sql:query>

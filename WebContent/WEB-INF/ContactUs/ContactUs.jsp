@@ -86,8 +86,22 @@
 		                        
 		                        <c:forEach items="${UserList}" var="entry">
 						  			<tr>
-									<li><a href="../Farms/OrderHistory"><span class="glyphicon glyphicon-time"></span>Order History</a></li>
+										<li><a href="../Farms/OrderHistory"><span class="glyphicon glyphicon-time"></span>Order History</a></li>
 								    </tr>
+								    
+									<tr>
+										<c:if test="${sessionScope.farmNum  == 1}">
+											<li><a href="../Farms/EditFarm1"><span class="glyphicon glyphicon-cog"></span>Edit Your Farm1</a></li>
+										</c:if>
+									<tr>
+									
+									<tr>
+										<c:if test="${sessionScope.farmNum  == 2}">
+											<li><a href="../Farms/EditFarm2"><span class="glyphicon glyphicon-cog"></span>Edit Your Farm2</a></li>
+										</c:if>
+									<tr>
+								    
+								    
 								</c:forEach>
 		                        
 		                        <li class="divider"></li>
@@ -95,7 +109,7 @@
 		                    </ul>
 		                </li>
 		                
-		                <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span>Cart</a></li>
+		                <li><a href="../Farms/ShoppingCartController"><span class="glyphicon glyphicon-shopping-cart"></span>Cart</a></li>
 		               
 		               	<!-- How to add a label next to cart. MAY BE USEFUL WHEN IMPLEMENTING CART!!!!!!!!!!!!
 		                <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span

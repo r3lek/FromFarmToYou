@@ -21,7 +21,7 @@ public class EditFarm2 extends HttpServlet {
     public EditFarm2() {
         super();
     }
-
+    
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.getWriter().append("Served at: ").append(request.getContextPath());
@@ -64,8 +64,8 @@ public class EditFarm2 extends HttpServlet {
         Connection c = null;
         try
         {
-            String url = "jdbc:mysql://localhost/cs3220stu63";
-            String username = "cs3220stu63";
+            String url = "jdbc:mysql://localhost/cs3220stu76";
+            String username = "cs3220stu76";
             String password = "abcd";
             
             //Update the farms services
@@ -131,7 +131,11 @@ public class EditFarm2 extends HttpServlet {
                 throw new ServletException( e );
             }
         }
-		
-	}
+		response.sendRedirect("../ChickenPages/index");
 
+        
+	}
+	
+
+	
 }

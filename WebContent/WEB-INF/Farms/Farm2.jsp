@@ -14,30 +14,25 @@
 </head>
 
 <body>
-    <sql:setDataSource var="farmedit" driver="com.mysql.jdbc.Driver" url="jdbc:mysql://localhost/cs3220stu63" user="cs3220stu63"  password="abcd"/>
+    <sql:setDataSource var="farmedit" driver="com.mysql.jdbc.Driver" url="jdbc:mysql://localhost/cs3220stu76" user="cs3220stu76"  password="abcd"/>
 	<sql:query dataSource="${farmedit}" var="result">SELECT * from farmerInfo WHERE id = 2; </sql:query>
 	<sql:query dataSource="${farmedit}" var="egg1">SELECT * from inventory WHERE id = 5; </sql:query>
 	<sql:query dataSource="${farmedit}" var="egg2">SELECT * from inventory WHERE id = 6; </sql:query>
 	<sql:query dataSource="${farmedit}" var="egg3">SELECT * from inventory WHERE id = 7; </sql:query>
     
-    <c:if test="${sessionScope.farmNum  == 2}">
-   		<form action="EditFarm1">
-    		<a href="EditFarm2"> Edit Your Farm</a>
-    	</form>
-    </c:if>
     
     <header id="cartNum">   
         <div class="nav">
             
             <!-- NavBar -->
             <ul class="main-nav-bar">
-            	<li><a href="#">User</a></li>
+            	<li><a href="../ChickenPages/index">Home</a></li>
                 <li><a href="#OurService">Our Service</a></li>
                 <li><a href="#Webcam">Webcam</a></li>
                 <li><a href="#Products">Products</a></li>
                 <li><a href="#Reviews">Reviews</a></li>
                 <li>
-                	<a href="/cart"><i class="fa fa-2x fa-shopping-cart"></i></a>
+                	<a href="../Farms/ShoppingCartController"><i class="fa fa-2x fa-shopping-cart"></i></a>
                		<label id="cart-badge" class="badge badge-warning"><font id="num">0</font></label>
                 </li>
             </ul>
