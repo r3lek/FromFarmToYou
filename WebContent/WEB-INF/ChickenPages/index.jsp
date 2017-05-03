@@ -43,7 +43,6 @@
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	
 <script>
-
 </script>	
 	
 	
@@ -104,8 +103,6 @@
 	                    <c:forEach items="${UserList}" var="entry">
 						  <tr>
 						    <td>${entry.username}</td>
-						    
-						    
 						  </tr>
 						</c:forEach>
                     <b class="caret"></b></a> <!-- ADD JSP HERE THAT REFLECTS USER STATUS AND/OR NAME -->
@@ -113,19 +110,32 @@
                         <li><a href="../chickenPages/Profile"><span class="glyphicon glyphicon-user"></span>Profile</a></li>
                         
                         <c:forEach items="${UserList}" var="entry">
-						  <tr>
-						    
-							<li><a href="../Farms/OrderHistory"><span class="glyphicon glyphicon-time"></span>Order History</a></li>
-						    
-						  </tr>
+						  	 <tr>
+								<li><a href="../Farms/OrderHistory"><span class="glyphicon glyphicon-time"></span>Order History</a></li>
+						 	 </tr>
+						 
+						 	<tr>
+							    <c:if test="${sessionScope.farmNum  == 1}">
+    							  	<li><a href="../Farms/EditFarm1"><span class="glyphicon glyphicon-cog"></span>Edit Your Farm1</a></li>
+    							</c:if>
+							<tr>
+						  	
+						  	<tr>
+							    <c:if test="${sessionScope.farmNum  == 2}">
+    							  	<li><a href="../Farms/EditFarm2"><span class="glyphicon glyphicon-cog"></span>Edit Your Farm2</a></li>
+    							</c:if>
+							<tr>
+						  		
 						</c:forEach>
+						
+						
                         
                         <li class="divider"></li>
                         <li><a href="../chickenPages/Logout"><span class="glyphicon glyphicon-off"></span>Logout</a></li>
                     </ul>
                 </li>
                 
-                <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span>Cart</a></li>
+                <li><a href="../Farms/ShoppingCartController"><span class="glyphicon glyphicon-shopping-cart"></span>Cart</a></li>
                
                	<!-- How to add a label next to cart. MAY BE USEFUL WHEN IMPLEMENTING CART!!!!!!!!!!!!
                 <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span
@@ -158,26 +168,26 @@
       <div class="carousel-inner">
       
         <div class="item active">
-          <img src="../images/Farm2HomePic1.jpeg">
+          <img src="../images/HomePic.jpg">
            <div class="carousel-caption">
-            <h4><a href="#">Farm 1 (Dixon Farm)</a></h4>
-            <p>This farm has white, brown, and omega eggs. This farm specializes in white eggs. <a class="label label-primary" href="insertHereURL" target="_blank">Farm 1</a></p>
+            <h4><a href="../Farms/FarmController">Farm 1 (Dixon Farm)</a></h4>
+            <p>This farm has white, brown, and omega eggs. This farm specializes in white eggs. <a class="label label-primary" href="../Farms/FarmController">Farm 1</a></p>
           </div>
         </div><!-- End Item -->
 
          <div class="item">
-          <img src="../images/Farm3HomePic1.jpg">
+          <img src="../images/Farm2HomePic1.jpeg">
            <div class="carousel-caption">
-            <h4><a href="#">Farm 2 (Generic Farm)</a></h4>
-            <p>A family owned farm, that guarantees the freshness of their eggs. Caring about their livestock and customers, this farm offers a variety of eggs. Check them out here!  <a class="label label-primary" href="InserURLHERE" target="_blank">Farm 2</a></p>
+            <h4><a href="../Farms/Farm2Controller">Farm 2 (Hesperia Farm)</a></h4>
+            <p>A family owned farm, that guarantees the freshness of their eggs. Caring about their livestock and customers, this farm offers a variety of eggs. Check them out here!  <a class="label label-primary" href="../Farms/Farm2Controller" >Farm 2</a></p>
           </div>
         </div><!-- End Item -->
         
         <div class="item">
-          <img src="../images/HomePic.jpg">
+          <img src="../images/Farm3HomePic1.jpg">
            <div class="carousel-caption">
-            <h4><a href="#">Farm 3 (Other Farm)</a></h4>
-            <p>After the battling and triumphing the recession, this family owned farm has grown together. This farm treats its chickens as part of the family. Check out the hens here, and maybe the owners!  <a class="label label-primary" href="InsertURLHERE" target="_blank">Farm3</a></p>
+            <h4><a href="../Farms/Farm3Controller">Farm 3 (Westwick Rooke Farm)</a></h4>
+            <p>After the battling and triumphing the recession, this family owned farm has grown together. This farm treats its chickens as part of the family. Check out the hens here, and maybe the owners!  <a class="label label-primary" href="../Farms/Farm3Controller" >Farm3</a></p>
           </div>
         </div><!-- End Item -->
 
@@ -187,8 +197,8 @@
 
     <ul class="list-group col-sm-4">
       <li data-target="#myCarousel" data-slide-to="0" class="list-group-item"><h4>Farm 1 (Dixon Farm)</h4></li>
-      <li data-target="#myCarousel" data-slide-to="1" class="list-group-item"><h4>Farm 2 (Generic Farm)</h4></li>
-      <li data-target="#myCarousel" data-slide-to="2" class="list-group-item"><h4>Farm 3 (Other Farm)</h4></li>
+      <li data-target="#myCarousel" data-slide-to="1" class="list-group-item"><h4>Farm 2 (Hesperia Farm)</h4></li>
+      <li data-target="#myCarousel" data-slide-to="2" class="list-group-item"><h4>Farm 3 (Westwick Rooke Farm)</h4></li>
     
     </ul>
 

@@ -8,6 +8,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.sql.Date;
 
 import javax.servlet.ServletException;
@@ -18,6 +19,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import Login.SigninUser;
+
 import shoppingCart.Products;
 
 /**
@@ -42,7 +44,23 @@ public class ShippingLabel extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		HttpSession session = request.getSession();
+		java.util.Date newdate = Calendar.getInstance().getTime();
+		System.out.println("The date is " + newdate);
+		session.setAttribute("date", newdate.toString());
+		
 		response.getWriter().append("Served at: ").append(request.getContextPath());
+		String address = "";
+		if(session.getAttribute("UserList") == null){
+			ArrayList<Products> product = (ArrayList<Products>) session.getAttribute("productList");
+			
+			int totalEggs = 0;
+			//get total num of eggs bought
+			for(Products p: product){
+				totalEggs += p.getQuantity(); //This gives total price of everything in the list. 	
+			
+			}
+			session.setAttribute("totalEggs", totalEggs);
+		}
 		
 		//ArrayList<SigninUser> user = (ArrayList<SigninUser>) session.getAttribute("UserList");
 		if(session.getAttribute("UserList") !=null){
@@ -55,12 +73,18 @@ public class ShippingLabel extends HttpServlet {
 			}
 			
 			int farmNum = product.get(0).getFarm_num();
-			double totalPrice = (double) session.getAttribute("totalSum") + 5;
+			double totalPrice = (double) session.getAttribute("sumTax");
 			
 			
 			ArrayList<SigninUser> user = (ArrayList<SigninUser>) session.getAttribute("UserList");
 			String fname = user.get(0).getFirst_name();
 			String lname = user.get(0).getLast_name();
+			
+			
+			session.setAttribute("totalEggs", totalEggs);
+			session.setAttribute("fname", fname);
+			session.setAttribute("lname", lname);
+			
 			
 			
 			//Connect to db
@@ -73,11 +97,21 @@ public class ShippingLabel extends HttpServlet {
 				String password = "abcd";
 				c = DriverManager.getConnection(url, username, password);
 				
+				Statement stmt = c.createStatement();
+	            ResultSet rs = stmt.executeQuery( "SELECT address FROM users WHERE farm_num = " + farmNum);
+	            while( rs.next() ){
+	            	address = rs.getString("address");
+	            	session.setAttribute("farmAddress", address);
+	            	System.out.println("Farmer address is : " + address);
+	            }
 				
 				//Create prepared statement to prevent sql injections
 				java.util.Date date = new java.util.Date();
 		        java.sql.Date sqlDate = new Date(date.getYear(), date.getMonth(), date.getDate());
-		 
+		        
+		        String currDate = date.toString();
+		        //session.setAttribute("date", currDate);
+		        
 				if(session.getAttribute("UserList") != null){
 					String query = "INSERT INTO orderhistory (first_name, last_name, farm_num, eggsbought, totalprice, date) values(?,?,?,?,?,?)";
 					PreparedStatement statement = c.prepareStatement(query);
@@ -88,6 +122,8 @@ public class ShippingLabel extends HttpServlet {
 					statement.setDouble(5, totalPrice);
 					statement.setDate(6, sqlDate);
 					statement.executeUpdate();
+					
+					
 				}
 				session.setAttribute("fname", fname);
 				session.setAttribute("lname", lname);

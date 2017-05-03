@@ -84,17 +84,21 @@ public class SignIn extends HttpServlet {
 					SigninUser signedUser = new SigninUser(rs.getInt("id"), rs.getString("first_name"), rs.getString("last_name"), rs.getString("username"), rs.getString("email"), rs.getString("password"), rs.getString("status"));
 					user.add(signedUser);
 					
+					session.setAttribute("sFname", signedUser.getFirst_name() );
+					session.setAttribute("sLname", signedUser.getLast_name());
+					
 					if(rs.getInt("farm_num") > 0){
 						session.setAttribute("farmNum", rs.getInt("farm_num"));
 					}
 					session.setAttribute("UserList", user);
 					
-					//redirect to other servlet
-					response.sendRedirect("../ChickenPages/index");
-					
 					if (c != null) {
 						c.close();
 					}
+					//redirect to other servlet
+					response.sendRedirect("../ChickenPages/index");
+					
+					
 					
 					return;	
 					

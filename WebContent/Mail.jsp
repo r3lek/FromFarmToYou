@@ -17,8 +17,8 @@
 
   // Setup mail server
    properties.setProperty("mail.smtp.host", host);
-   properties.setProperty("mail.user", "myuser");
-   properties.setProperty("mail.password", "mypwd");
+   properties.setProperty("mail.user", "mobparagon@gmail.com");
+   properties.setProperty("mail.password", "paragon123");
 
   
   // Get the default Session object.

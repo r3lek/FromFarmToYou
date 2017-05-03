@@ -60,10 +60,12 @@ public class ShoppingCartController extends HttpServlet {
 			product.setName(name);
 			product.setQuantity(quantity);
 			product.setPrice(price);
-			product.setTotalPrice(price*quantity);
+			double rounded = Math.round(price*quantity * 100.0) / 100.0;
+			System.out.println("This is rounded: " + rounded);
+			product.setTotalPrice(rounded);
 			product.setId(id);
 			inCart.add(product);
-			
+			//Math.round(totalSum * 100.0) / 100.0);
 			
 			
 			session.setAttribute("productList", inCart); //Store the arraylist inside session
@@ -74,8 +76,8 @@ public class ShoppingCartController extends HttpServlet {
 				
 			}
 			
-			session.setAttribute("totalSum", totalSum);	//Set total price in session
-			
+			session.setAttribute("totalSum", Math.round(totalSum * 100.0) / 100.0);	//Set total price in session
+			session.setAttribute("sumTax", Math.round((totalSum + 5) * 100.0) / 100.0);	//Set the total with added 5 dollar shipping
 			
 		}
 		else if (session.getAttribute("productList") != null){ //Arraylist is already in session
@@ -88,6 +90,7 @@ public class ShoppingCartController extends HttpServlet {
 					totalSum += p.getTotalPrice(); //This gives total price of everything in the list. 	
 				}
 				session.setAttribute("totalSum", Math.round(totalSum * 100.0) / 100.0);
+				session.setAttribute("sumTax", Math.round((totalSum + 5) * 100.0) / 100.0);
 			}
 			else if(isInList(inCart, name, price, quantity, id) == false){ //Product selected not inside the arraylist, so create new prod obj 
 				Products product = new Products();
@@ -95,7 +98,9 @@ public class ShoppingCartController extends HttpServlet {
 				product.setName(name);
 				product.setQuantity(quantity);
 				product.setPrice(price);
-				product.setTotalPrice(price*quantity);
+				double rounded = Math.round(price*quantity * 100.0) / 100.0;
+				System.out.println("This is rounded: " + rounded);
+				product.setTotalPrice(rounded);
 				product.setId(id);
 				
 				inCart.add(product);
@@ -106,7 +111,7 @@ public class ShoppingCartController extends HttpServlet {
 					totalSum += p.getTotalPrice(); //This gives total price of everything in the list. 	
 				}
 				session.setAttribute("totalSum", Math.round(totalSum * 100.0) / 100.0);
-				
+				session.setAttribute("sumTax", Math.round((totalSum + 5) * 100.0) / 100.0);
 			}
 		}
 		

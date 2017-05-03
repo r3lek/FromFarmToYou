@@ -1,60 +1,34 @@
 package EmailLast;
 
-import java.io.IOException;
-import java.io.PrintWriter;
-
-import javax.ejb.EJB;
-import javax.servlet.ServletException;
+import java.io.*;
+import javax.servlet.*;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.*;
+import javax.mail.*;
+import javax.mail.internet.*;
+import javax.security.auth.message.callback.PrivateKeyCallback.Request;
 
-
-@WebServlet("/MailDispatcher")
+@WebServlet("/Farms/MailDispatcher")
 public class MailDispatcher extends HttpServlet {
+
 	private static final long serialVersionUID = 1L;
 
-	@EJB
-	private MailSenderBean mailSender;
-	
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		doPost(request,response);
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		req.getRequestDispatcher("/WEB-INF/mail/EmailClient.jsp").forward(req, resp);
 	}
-
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		
-		String fromEmail = "testerforemailabcd1234@gmail.com";
-		String username = "testerforemailabcd1234";
-		String password = "0213002130";
-		
-		try(PrintWriter out = response.getWriter()){
-			
-			//Call to mail sender bean
-			
-			mailSender.sendMail(fromEmail, username, password, "testerforemailabcd1234@gmail.com", "Test", "Here is a test");
-			
-			//------------------------------
-			
-			
-			out.println("<!DOCTYPE html>");
-			out.println("<html>");
-			out.println("<head>");
-			out.println("<title>Mail Status</title>");
-			out.println("</head>");
-			out.println("<body>");
-			out.println("<h1>Mail Status !!</h1>");
-			out.println("<h1>Mail Sent Successfully  !!</h1>");
-			out.println("Click here <a href='../WebContent/WEB-INF/Email/Email.jsp'>Click here</a> to go back");
-			out.println("</body>");
-			out.println("</html>");
-			
-			
-			
-		}
-		
-	}
-
+        response.setContentType("text/html;charset=UTF-8");
+        PrintWriter out = response.getWriter();
+        
+        String to = request.getParameter("email");
+        String subject = request.getParameter("subject");
+        String message =  request.getParameter("message");
+        //String user = request.getParameter("user");
+        //String pass = request.getParameter("pass");
+        SendMail.send(to, subject, message, "farmerSecond@gmail.com", "notAbc123");
+        out.println("Mail sent successfully");
+        //Redirect to index
+        
+    }   
 }

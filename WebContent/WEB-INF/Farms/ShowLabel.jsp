@@ -12,22 +12,29 @@
 
 <body bgcolor="#f0f0f0"> 
 	<h1 align=center> Show shipping label </h1>
-	<br><br>
-	<center><img style="vertical-align: right;" width="100px" height="75px" src="../images/chick.png"></center>
-	<br>
-	<center><table border="7"><thead><tr>
-	<th>To:  ${currentUser.first_name}  ${currentUser.last_name}</th></tr></thead>
-	<tr><td>Address: ${address}</td>
-	</tr>
-	<tr><td>${city}, ${state}, ${zip} </td>
-	<tr>
-	<th>FROM: Daryl Dixon</th></tr> <!-- get farmer first, and last name -->
-	<tr><td>Address: 123 Sesame street </td> <!-- Get address from farmer -->
-	</tr><tr><td>Los Angeles, CA, 90123</td> <!-- Get city, state, zip from farmer -->
-	</tr><tr><td>United States</td></tr>
-	<!-- Inser ran num here -->
-	<tr><td><img style="vertical-align: bottom;" width="274px" height="50px" src="../images/barcode.jpg"></td></tr>
-	</table></center>
+		<br><br>
+		<center><img style="vertical-align: right;" width="100px" height="75px" src="../images/chick.png"></center>
+		<br>
+		<center><table border="7"><thead><tr>
+		<th>To:  ${currentUser.first_name}  ${currentUser.last_name}</th></tr></thead>
+		<tr><td>Address: ${address}</td>
+		</tr>
+		<tr><td>${city}, ${state}, ${zip} </td>
+		<tr>
+		<th>FROM: Daryl Dixon</th></tr> <!-- get farmer first, and last name -->
+		<tr><td>Address: 123 Sesame street </td> <!-- Get address from farmer -->
+		</tr><tr><td>Los Angeles, CA, 90123</td> <!-- Get city, state, zip from farmer -->
+		</tr><tr><td>United States</td></tr>
+		<!-- Inser ran num here -->
+		<tr><td><img style="vertical-align: bottom;" width="274px" height="50px" src="../images/barcode.jpg"></td></tr>
+		</table></center>
+	<center> 
+	<form method = "GET" action = "../ChickenPages/index">
+		<input type="submit" value="Go Home">
+	</form>
+	
+	</center>
+		
 </body>
 </html>
 	

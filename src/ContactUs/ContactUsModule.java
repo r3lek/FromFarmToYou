@@ -1,13 +1,18 @@
 package ContactUs;
 
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
-
+import java.io.InputStream;
+import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -15,6 +20,15 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+
+import org.apache.commons.fileupload.FileItem;
+import org.apache.commons.fileupload.FileItemFactory;
+import org.apache.commons.fileupload.FileItemIterator;
+import org.apache.commons.fileupload.FileItemStream;
+import org.apache.commons.fileupload.FileUploadException;
+import org.apache.commons.fileupload.disk.DiskFileItemFactory;
+import org.apache.commons.fileupload.servlet.ServletFileUpload;
+import org.apache.commons.fileupload.util.Streams;
 
 import Login.SigninUser;
 
@@ -28,7 +42,7 @@ public class ContactUsModule extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
    
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 		
 		//Get the session from the user to get status (admin or customer)
 		HttpSession session = request.getSession();
@@ -64,14 +78,23 @@ public class ContactUsModule extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		String name = request.getParameter("name");
+		String names = request.getParameter("name");
 		String email = request.getParameter("email");
 		String comment = request.getParameter("comment");
+		String itemUploaded = "";	//Eventually becomes, names of files uploaded
 		
 		java.util.Date date = new java.util.Date();
 		java.sql.Date sqlDate = new Date(date.getYear(), date.getMonth(), date.getDate());
 		
 		
+		ServletFileUpload sf = new ServletFileUpload(new DiskFileItemFactory());
+		
+		List<FileItem> multifiles;
+		
+
+
+		
+	
 		Connection c = null;
 		try
 		{
@@ -80,16 +103,17 @@ public class ContactUsModule extends HttpServlet {
 			String username = "cs3220stu63";
 			String password = "abcd";
 			
-            String sql = "insert into ContactUs (name, email, comment, date) values(?,?,?,?);";
+            String sql = "insert into ContactUs (name, email, comment, date, items) values(?,?,?,?,?);";
 
             c = DriverManager.getConnection( url, username, password);
             PreparedStatement pstmt = c.prepareStatement(sql);
             
             
-			pstmt.setString(1, name);
+			pstmt.setString(1, names);
 			pstmt.setString(2, email);
 			pstmt.setString(3, comment);
 			pstmt.setDate(4, sqlDate);
+			pstmt.setString(5, itemUploaded);
 			pstmt.executeUpdate();
 		}
 		

@@ -101,15 +101,6 @@ public class Registration extends HttpServlet {
     			}
     		}
             
-            
-            
-            
-            
-            
-            
-            
-            
-            
 
             // send the user back to the guest book page
             response.sendRedirect("Signin");

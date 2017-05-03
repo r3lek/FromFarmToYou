@@ -29,12 +29,15 @@ public class DeleteEgg extends HttpServlet {
 		//Session must exist in order for them to have gotten here
 		ArrayList<Products> inCart = (ArrayList<Products>) session.getAttribute("productList");		
 		
-		double totalSum = (double) session.getAttribute("totalSum");
+		double subTotal = (double) session.getAttribute("totalSum");
+		double totalSum = (double) session.getAttribute("sumTax");
 		
 		for (Products products : inCart) { // Traverse arraylist and remove obj from arraylist
 			if(products.getId() == id){
 				inCart.remove(products);
-				session.setAttribute("totalSum", Math.round((totalSum - products.getTotalPrice()) * 100.0) / 100.0);
+				session.setAttribute("sumTax", Math.round((totalSum - products.getTotalPrice()) * 100.0) / 100.0);
+				session.setAttribute("totalSum", Math.round((subTotal - products.getTotalPrice()) * 100.0) / 100.0);
+
 				break;
 			}
 			session.setAttribute("productList", inCart);

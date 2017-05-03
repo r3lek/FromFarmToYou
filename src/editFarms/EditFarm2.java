@@ -131,7 +131,12 @@ public class EditFarm2 extends HttpServlet {
                 throw new ServletException( e );
             }
         }
-		
+	
+        response.sendRedirect("Farm2Controller"); //After updates send them back
 	}
+	
+	
+	
+	
 
 }

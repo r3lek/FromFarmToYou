@@ -58,7 +58,7 @@
                         <input type="number" class="form-control" name="quantity" value="${entry.quantity}" min = "0" >
                         </td>
                         <td class="col-sm-1 col-md-1 text-center"><strong>${entry.price}</strong></td>
-                        <td class="col-sm-1 col-md-1 text-center"><strong>$${entry.price*entry.quantity}</strong></td>
+                        <td class="col-sm-1 col-md-1 text-center"><strong>$${entry.totalPrice}</strong></td>
                         <td class="col-sm-1 col-md-1">
                         <form>
                         <button type="button" class="btn btn-danger">
@@ -92,7 +92,7 @@
                         <td>   </td>
                         <td>   </td>
                         <td><h3>Total</h3></td>
-                        <td class="text-right"><h3><strong>${sessionScope.totalSum + 5 }</strong></h3></td>
+                        <td class="text-right"><h3><strong>${sessionScope.sumTax}</strong></h3></td>
                     </tr>
                     
                   

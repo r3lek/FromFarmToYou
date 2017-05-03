@@ -87,11 +87,23 @@
 		                        <li><a href="../chickenPages/Profile"><span class="glyphicon glyphicon-user"></span>Profile</a></li>
 		                        
 		                        <c:forEach items="${UserList}" var="entry">
-								  <tr>
-						    
-								  <li><a href="../Farms/OrderHistory"><span class="glyphicon glyphicon-time"></span>Order History</a></li>
-						    
-						  		  </tr>
+								  	<tr>
+								 		<li><a href="../Farms/OrderHistory"><span class="glyphicon glyphicon-time"></span>Order History</a></li>
+						  		  	</tr>
+						  		  
+									<tr>
+										<c:if test="${sessionScope.farmNum  == 1}">
+											<li><a href="../Farms/EditFarm1"><span class="glyphicon glyphicon-cog"></span>Edit Your Farm1</a></li>
+										</c:if>
+									
+									<tr>
+									
+									<tr>
+										<c:if test="${sessionScope.farmNum  == 2}">
+											<li><a href="../Farms/EditFarm2"><span class="glyphicon glyphicon-cog"></span>Edit Your Farm2</a></li>
+										</c:if>
+									<tr>
+						  
 								</c:forEach>
 		                        
 		                        <li class="divider"></li>
@@ -99,22 +111,8 @@
 		                    </ul>
 		                </li>
 		                
-		                <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span>Cart</a></li>
-		               
-		               	<!-- How to add a label next to cart. MAY BE USEFUL WHEN IMPLEMENTING CART!!!!!!!!!!!!
-		                <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span
-		                    class="glyphicon glyphicon-envelope"></span>Inbox <span class="label label-info">32</span>
-		                </a>
-		                    <ul class="dropdown-menu">
-		                        <li><a href="#"><span class="label label-warning">4:00 AM</span>Favourites Snippet</a></li>
-		                        <li><a href="#"><span class="label label-warning">4:30 AM</span>Email marketing</a></li>
-		                        <li><a href="#"><span class="label label-warning">5:00 AM</span>Subscriber focused email
-		                            design</a></li>
-		                        <li class="divider"></li>
-		                        <li><a href="#" class="text-center">View All</a></li>
-		                    </ul>
-		                </li>
-		                 -->
+		                <li><a href="../Farms/ShoppingCartController"><span class="glyphicon glyphicon-shopping-cart"></span>Cart</a></li>
+		         
 		                
 		            </ul>
 		        </div>
@@ -126,11 +124,11 @@
 
 
 <div align="center" style="padding-left:20%; padding-right:20%; padding-top:5%">	
-We are an ecommerce website introducing a fresh (no pun intended) way to deliver eggs to people in local areas by allowing local farmers in your local area
-expand their business by selling you the fresh eggs on the market. This is a great way to help local farmers by selling their product to the public and also
-delivering the best eggs straight to your door! We currently have 3 farmers available to sell on our website and we plan on adding many more farmers so that
-you the customer can enjoy a variety of eggs from different farms. Stay tuned for continuing update on our farmers and be sure to leave a comment in the contact
-us if you have an concerns or comments. 
+	We are an ecommerce website introducing a fresh (no pun intended) way to deliver eggs to people in local areas by allowing local farmers in your local area
+	expand their business by selling you the fresh eggs on the market. This is a great way to help local farmers by selling their product to the public and also
+	delivering the best eggs straight to your door! We currently have 3 farmers available to sell on our website and we plan on adding many more farmers so that
+	you the customer can enjoy a variety of eggs from different farms. Stay tuned for continuing update on our farmers and be sure to leave a comment in the contact
+	us if you have an concerns or comments. 
 </div>
 
 </body>

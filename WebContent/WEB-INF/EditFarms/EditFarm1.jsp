@@ -46,7 +46,7 @@
             
             <!-- NavBar -->
             <ul class="main-nav-bar">
-            	<li><a href="#">User</a></li>
+            	<li><a href="../chickenPages/Profile">User</a></li>
                 <li><a href="#OurService">Our Service</a></li>
                 <li><a href="#Webcam">Webcam</a></li>
                 <li><a href="#Products">Products</a></li>

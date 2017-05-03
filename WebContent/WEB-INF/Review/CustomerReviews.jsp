@@ -99,8 +99,25 @@
                         
                         <c:forEach items="${UserList}" var="entry">
 						  	<tr>
-							<li><a href="../Farms/OrderHistory"><span class="glyphicon glyphicon-time"></span>Order History</a></li>
+								<li><a href="../Farms/OrderHistory"><span class="glyphicon glyphicon-time"></span>Order History</a></li>
 							</tr>
+							
+							
+							<tr>
+								<c:if test="${sessionScope.farmNum  == 1}">
+									<li><a href="../Farms/EditFarm1"><span class="glyphicon glyphicon-cog"></span>Edit Your Farm1</a></li>
+								</c:if>
+							
+							<tr>
+							
+							<tr>
+								<c:if test="${sessionScope.farmNum  == 2}">
+									<li><a href="../Farms/EditFarm2"><span class="glyphicon glyphicon-cog"></span>Edit Your Farm2</a></li>
+								</c:if>
+							<tr>
+
+							
+							
 						</c:forEach>
                         
                         <li class="divider"></li>
@@ -108,22 +125,8 @@
                     </ul>
                 </li>
                 
-                <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span>Cart</a></li>
+                <li><a href="../Farms/ShoppingCartController"><span class="glyphicon glyphicon-shopping-cart"></span>Cart</a></li>
                
-               	<!-- How to add a label next to cart. MAY BE USEFUL WHEN IMPLEMENTING CART!!!!!!!!!!!!
-                <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span
-                    class="glyphicon glyphicon-envelope"></span>Inbox <span class="label label-info">32</span>
-                </a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#"><span class="label label-warning">4:00 AM</span>Favourites Snippet</a></li>
-                        <li><a href="#"><span class="label label-warning">4:30 AM</span>Email marketing</a></li>
-                        <li><a href="#"><span class="label label-warning">5:00 AM</span>Subscriber focused email
-                            design</a></li>
-                        <li class="divider"></li>
-                        <li><a href="#" class="text-center">View All</a></li>
-                    </ul>
-                </li>
-                 -->
             </ul>
         </div>
         <!-- /.navbar-collapse -->
