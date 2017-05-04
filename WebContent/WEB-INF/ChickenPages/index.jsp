@@ -45,7 +45,13 @@
 <script>
 
 </script>	
-	
+
+<style>
+#Farm2Size{
+height: 180%;
+width: 100%;
+}
+</style>
 	
 </head>
 
@@ -169,7 +175,8 @@
       <div class="carousel-inner">
       
         <div class="item active">
-          <img src="../images/HomePic.jpg">
+         <div style="height:522px; width: 100%; background-size: contain; background-image: url(../images/HomePic.jpg); background-position: center; background-size: cover;">
+         </div>
            <div class="carousel-caption">
             <h4><a href="../Farms/FarmController">Farm 1 (Dixon Farm)</a></h4>
             <p>This farm has white, brown, and omega eggs. This farm specializes in white eggs. <a class="label label-primary" href="../Farms/FarmController" target="_blank">Farm 1</a></p>
@@ -177,7 +184,8 @@
         </div><!-- End Item -->
 
          <div class="item">
-          <img src="../images/Farm2HomePic1.jpeg">
+         <div style="height:522px; width: 100%; background-size: contain; background-image: url(../images/Farm2HomePic1.jpeg); background-position: center; background-size: cover;">
+         </div>
            <div class="carousel-caption">
             <h4><a href="../Farms/Farm2Controller">Farm 2 (Hesperia Farm)</a></h4>
             <p>A family owned farm, that guarantees the freshness of their eggs. Caring about their livestock and customers, this farm offers a variety of eggs. Check them out here!  <a class="label label-primary" href="../Farms/Farm2Controller" target="_blank">Farm 2</a></p>
