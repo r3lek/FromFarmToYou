@@ -24,8 +24,8 @@
 
 	
 	<sql:setDataSource var="UserContactUs" driver="com.mysql.jdbc.Driver"
-     url="jdbc:mysql://cs3.calstatela.edu/cs3220stu63"
-     user="cs3220stu63"  password="5y2rJd#W"/>
+     url="jdbc:mysql://localhost/cs3220stu63"
+     user="cs3220stu63"  password="abcd"/>
         
 	<sql:query dataSource="${UserContactUs}" var="result">
 	SELECT * from ContactUs;
@@ -73,11 +73,9 @@
 		                    class="glyphicon glyphicon-cog"></span>Sign Up
 		                </a>
 		                    <ul class="dropdown-menu">
-		                        <li><a href="../Login/Registration"><!--  <span class="label label-warning">4:00 AM</span> -->Register Now!</a></li>
-		                        <li><a href="../Login/Signin"><!--  <span class="label label-warning">4:30 AM</span> --> Login</a></li>
-		                        <!--  <li><a href="#"><span class="label label-warning">5:00 AM</span>Subscriber focused email
-		                            design</a></li>
-		                        <li class="divider"></li>-->
+		                        <li><a href="../Login/Registration">Register Now!</a></li>
+		                        <li><a href="../Login/Signin">Login</a></li>
+		                      
 		                    </ul>
 		                </li>
 		                <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span

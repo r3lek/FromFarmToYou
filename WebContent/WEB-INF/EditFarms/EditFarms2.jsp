@@ -15,8 +15,8 @@
 
 <body>
     <sql:setDataSource var="farmedit" driver="com.mysql.jdbc.Driver"
-    url="jdbc:mysql://cs3.calstatela.edu/cs3220stu63"
-    user="cs3220stu63"  password="5y2rJd#W"/>
+     url="jdbc:mysql://localhost/cs3220stu63"
+     user="cs3220stu63"  password="abcd"/>
     
 	<sql:query dataSource="${farmedit}" var="result">SELECT * from farmerInfo WHERE id = 2; </sql:query>
 	<sql:query dataSource="${farmedit}" var="egg1">SELECT * from inventory WHERE id = 5; </sql:query>

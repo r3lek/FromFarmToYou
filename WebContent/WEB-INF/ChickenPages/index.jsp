@@ -4,8 +4,6 @@
 
 <!-- Some of the design was snipped from bootsipp
 	 More specifically - http://bootsnipp.com/snippets/MRlbB, http://bootsnipp.com/snippets/featured/admin-navigation
-	 Used under MIT license
-	 Copyright (c) 2013 Bootsnipp.com
  -->
  
 <!DOCTYPE html>

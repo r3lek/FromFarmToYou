@@ -64,9 +64,9 @@ public class EditFarm2 extends HttpServlet {
         Connection c = null;
         try
         {
-            String url = "jdbc:mysql://cs3.calstatela.edu/cs3220stu63";
-            String username = "cs3220stu63";
-            String password = "5y2rJd#W";
+			String url = "jdbc:mysql://localhost:3306/cs3220stu63";
+			String username = "cs3220stu63";
+			String password = "abcd";
             
             //Update the farms services
             String sql = "UPDATE farmerInfo SET h1_header = ?, service_texT = ?, first_h4 = ?, arranging_text = ?, second_h4 = ?, arranging2_text = ?, third_h4 = ?, arranging3_text = ?, fourth_h4 = ?, arranging4_text = ? WHERE id = 2";
